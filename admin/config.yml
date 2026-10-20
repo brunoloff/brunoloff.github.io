@@ -10,76 +10,263 @@ display_url: https://brunoloff.github.io
 media_folder: assets/uploads
 public_folder: /assets/uploads
 collections:
-- name: homepage
-  label: Homepage
-  files:
-  - name: home
-    label: Homepage
-    file: pages/home.html
-    format: yaml-frontmatter
-    fields:
-    - name: title
-      label: Title
-      widget: string
-    - name: description
-      label: Search description
-      widget: text
-      required: false
-      hint: Optional short description for search engines.
-    - name: layout
-      widget: hidden
-      default: page
-    - name: permalink
-      label: Page address
-      widget: string
-      hint: Keep the existing address to preserve links. Use a leading and trailing
-        slash, for example /my-page/.
-      pattern:
-      - ^/(?:[A-Za-z0-9_-]+/)*$
-      - Use / or a path such as /my-page/.
-    - name: body
-      label: Page content
-      widget: richtext
-      format: html
-      editor_components:
-      - image
-      - code-block
-      - table
-      - hr
-      - photo
-      - details
-      buttons:
-      - bold
-      - italic
-      - strikethrough
-      - code
-      - link
-      - heading-one
-      - heading-two
-      - heading-three
-      - heading-four
-      - heading-five
-      - heading-six
-      - bulleted-list
-      - numbered-list
-      - quote
-      - align
-- name: pages
-  label: Pages
+- name: main
+  label: Main
   label_singular: Page
+  icon: home
+  description: Homepage, publications, and seminars.
   folder: pages
   create: true
   delete: false
   extension: html
   format: yaml-frontmatter
   filter:
-    field: permalink
-    pattern: ^/.+
+    field: cms_collection
+    pattern: ^main$
   preview_path: '{{permalink}}'
   fields:
   - name: title
     label: Title
     widget: string
+  - name: cms_collection
+    label: Collection
+    widget: select
+    options:
+    - label: Main
+      value: main
+    - label: Courses
+      value: courses
+    - label: Research
+      value: research
+    - label: Archive
+      value: archive
+    default: main
+    hint: Choose where this page appears in the editor.
+  - name: description
+    label: Search description
+    widget: text
+    required: false
+    hint: Optional short description for search engines.
+  - name: layout
+    widget: hidden
+    default: page
+  - name: permalink
+    label: Page address
+    widget: string
+    hint: Keep the existing address to preserve links. Use a leading and trailing
+      slash, for example /my-page/.
+    pattern:
+    - ^/(?:[A-Za-z0-9_-]+/)*$
+    - Use / or a path such as /my-page/.
+  - name: body
+    label: Page content
+    widget: richtext
+    format: html
+    editor_components:
+    - image
+    - code-block
+    - table
+    - hr
+    - photo
+    - details
+    buttons:
+    - bold
+    - italic
+    - strikethrough
+    - code
+    - link
+    - heading-one
+    - heading-two
+    - heading-three
+    - heading-four
+    - heading-five
+    - heading-six
+    - bulleted-list
+    - numbered-list
+    - quote
+    - align
+- name: courses
+  label: Courses
+  label_singular: Page
+  icon: school
+  description: Current and past courses, including their lecture notes.
+  folder: pages
+  create: true
+  delete: false
+  extension: html
+  format: yaml-frontmatter
+  filter:
+    field: cms_collection
+    pattern: ^courses$
+  preview_path: '{{permalink}}'
+  fields:
+  - name: title
+    label: Title
+    widget: string
+  - name: cms_collection
+    label: Collection
+    widget: select
+    options:
+    - label: Main
+      value: main
+    - label: Courses
+      value: courses
+    - label: Research
+      value: research
+    - label: Archive
+      value: archive
+    default: courses
+    hint: Choose where this page appears in the editor.
+  - name: description
+    label: Search description
+    widget: text
+    required: false
+    hint: Optional short description for search engines.
+  - name: layout
+    widget: hidden
+    default: page
+  - name: permalink
+    label: Page address
+    widget: string
+    hint: Keep the existing address to preserve links. Use a leading and trailing
+      slash, for example /my-page/.
+    pattern:
+    - ^/(?:[A-Za-z0-9_-]+/)*$
+    - Use / or a path such as /my-page/.
+  - name: body
+    label: Page content
+    widget: richtext
+    format: html
+    editor_components:
+    - image
+    - code-block
+    - table
+    - hr
+    - photo
+    - details
+    buttons:
+    - bold
+    - italic
+    - strikethrough
+    - code
+    - link
+    - heading-one
+    - heading-two
+    - heading-three
+    - heading-four
+    - heading-five
+    - heading-six
+    - bulleted-list
+    - numbered-list
+    - quote
+    - align
+- name: research
+  label: Research
+  label_singular: Page
+  icon: science
+  description: Research projects, groups, and problems.
+  folder: pages
+  create: true
+  delete: false
+  extension: html
+  format: yaml-frontmatter
+  filter:
+    field: cms_collection
+    pattern: ^research$
+  preview_path: '{{permalink}}'
+  fields:
+  - name: title
+    label: Title
+    widget: string
+  - name: cms_collection
+    label: Collection
+    widget: select
+    options:
+    - label: Main
+      value: main
+    - label: Courses
+      value: courses
+    - label: Research
+      value: research
+    - label: Archive
+      value: archive
+    default: research
+    hint: Choose where this page appears in the editor.
+  - name: description
+    label: Search description
+    widget: text
+    required: false
+    hint: Optional short description for search engines.
+  - name: layout
+    widget: hidden
+    default: page
+  - name: permalink
+    label: Page address
+    widget: string
+    hint: Keep the existing address to preserve links. Use a leading and trailing
+      slash, for example /my-page/.
+    pattern:
+    - ^/(?:[A-Za-z0-9_-]+/)*$
+    - Use / or a path such as /my-page/.
+  - name: body
+    label: Page content
+    widget: richtext
+    format: html
+    editor_components:
+    - image
+    - code-block
+    - table
+    - hr
+    - photo
+    - details
+    buttons:
+    - bold
+    - italic
+    - strikethrough
+    - code
+    - link
+    - heading-one
+    - heading-two
+    - heading-three
+    - heading-four
+    - heading-five
+    - heading-six
+    - bulleted-list
+    - numbered-list
+    - quote
+    - align
+- name: archive
+  label: Archive
+  label_singular: Page
+  icon: archive
+  description: WordPress placeholder pages retained for review.
+  folder: pages
+  create: false
+  delete: false
+  extension: html
+  format: yaml-frontmatter
+  filter:
+    field: cms_collection
+    pattern: ^archive$
+  preview_path: '{{permalink}}'
+  fields:
+  - name: title
+    label: Title
+    widget: string
+  - name: cms_collection
+    label: Collection
+    widget: select
+    options:
+    - label: Main
+      value: main
+    - label: Courses
+      value: courses
+    - label: Research
+      value: research
+    - label: Archive
+      value: archive
+    default: archive
+    hint: Choose where this page appears in the editor.
   - name: description
     label: Search description
     widget: text

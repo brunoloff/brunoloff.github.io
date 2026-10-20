@@ -15,5 +15,6 @@ const PagePreview = ({entry, getAsset}) => {
     h('div', {className: 'entry-content', 'data-key-path': 'body', dangerouslySetInnerHTML: {__html: template.innerHTML}})
   );
 };
-CMS.registerPreviewTemplate('home', PagePreview);
-CMS.registerPreviewTemplate('pages', PagePreview);
+for (const collection of ['main', 'courses', 'research', 'archive']) {
+  CMS.registerPreviewTemplate(collection, PagePreview);
+}
