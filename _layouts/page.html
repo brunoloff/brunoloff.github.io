@@ -33,5 +33,17 @@
     </article>
   </main>
   <footer class="site-footer"><a href="{{ '/' | relative_url }}">Home</a> · <a href="{{ '/publications/' | relative_url }}">Publications</a> · <a href="{{ '/admin/' | relative_url }}">Edit website</a></footer>
+  <nav class="page-tools" aria-label="Page administration" hidden>
+    {% if page.cms_collection %}
+    {% assign entry_slug = page.path | split: '/' | last | remove: '.html' %}
+    <a href="{{ '/admin/' | relative_url }}#/collections/{{ page.cms_collection | uri_escape }}/entries/{{ entry_slug | uri_escape }}" aria-label="Edit this page" title="Edit this page">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 5 5M4 20l4-1L21 6a2.1 2.1 0 0 0-3-3L5 16l-1 4Z"/></svg>
+    </a>
+    {% endif %}
+    <a href="{{ '/admin/' | relative_url }}" aria-label="Admin dashboard" title="Admin dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 3-.6 2.1-1.8 1L5 5.6 2.5 9.9 4 11.5v2L2.5 15 5 19.4l2.1-.5 1.8 1 .6 2.1h5l.6-2.1 1.8-1 2.1.5 2.5-4.3-1.5-1.6v-2l1.5-1.6L19 5.6l-2.1.5-1.8-1L14.5 3Z"/><circle cx="12" cy="12.5" r="3"/></svg>
+    </a>
+  </nav>
+  <script src="{{ '/assets/js/page-tools.js' | relative_url }}" defer></script>
 </body>
 </html>

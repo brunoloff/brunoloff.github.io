@@ -57,6 +57,11 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
 .site-navigation nav { position: absolute; right: 0; top: 54px; background: #333; color: #fff; padding: 12px 20px; width: min(310px, 90vw); box-shadow: 2px 4px 12px #0002; }
 .site-navigation nav a { display: block; padding: 10px 0; text-decoration: none; }
 .site-navigation nav a:hover { color: #fff; text-decoration: underline; }
+.page-tools { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 5; display: flex; gap: 8px; }
+.page-tools[hidden] { display: none; }
+.page-tools a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; color: #555; background: #fff; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 2px 6px #0001; }
+.page-tools a:hover { color: #111; background: #f5f5f5; }
+.page-tools svg { width: 20px; height: 20px; }
 .wp-block-image figure { margin-bottom: 0; }
 @media (max-width: 800px) { .site-header-wrapper { padding-right: 76px; } }
 
