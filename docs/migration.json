@@ -1,0 +1,1022 @@
+{
+  "source": "https://brunoloff.wordpress.com/",
+  "imported_on": "2026-10-20",
+  "pages": [
+    {
+      "title": "Proofs, Computability, and Complexity (2025)",
+      "old_url": "https://brunoloff.wordpress.com/proofs-computability-and-complexity-2025/",
+      "new_path": "/proofs-computability-and-complexity-2025/"
+    },
+    {
+      "title": "Computational Complexity (2024)",
+      "old_url": "https://brunoloff.wordpress.com/computational-complexity-2024/",
+      "new_path": "/computational-complexity-2024/"
+    },
+    {
+      "title": "Computational Complexity (2023)",
+      "old_url": "https://brunoloff.wordpress.com/computational-complexity-2023/",
+      "new_path": "/computational-complexity-2023/"
+    },
+    {
+      "title": "Discrete Mathematics Seminar",
+      "old_url": "https://brunoloff.wordpress.com/tocsem/",
+      "new_path": "/tocsem/"
+    },
+    {
+      "title": "The Hardness of Finding Good Algorithms (HoFGA)",
+      "old_url": "https://brunoloff.wordpress.com/hofga/",
+      "new_path": "/hofga/"
+    },
+    {
+      "title": "Teoria da Informação (2022)",
+      "old_url": "https://brunoloff.wordpress.com/teoria-da-informacao-2022/",
+      "new_path": "/teoria-da-informacao-2022/"
+    },
+    {
+      "title": "Information theory (2021, now in English)",
+      "old_url": "https://brunoloff.wordpress.com/teoria-da-informacao-2021/",
+      "new_path": "/teoria-da-informacao-2021/"
+    },
+    {
+      "title": "Teoria da Informação (2020)",
+      "old_url": "https://brunoloff.wordpress.com/teoria-da-informacao-2020/",
+      "new_path": "/teoria-da-informacao-2020/"
+    },
+    {
+      "title": "Programação I – 2021",
+      "old_url": "https://brunoloff.wordpress.com/programacao-i-2021/",
+      "new_path": "/programacao-i-2021/"
+    },
+    {
+      "title": "Modelos de Computação 2020",
+      "old_url": "https://brunoloff.wordpress.com/modelos-de-computacao-2020/",
+      "new_path": "/modelos-de-computacao-2020/"
+    },
+    {
+      "title": "Programação II – 2020",
+      "old_url": "https://brunoloff.wordpress.com/programacao-ii-2020/",
+      "new_path": "/programacao-ii-2020/"
+    },
+    {
+      "title": "Estruturas Discretas 2019",
+      "old_url": "https://brunoloff.wordpress.com/estruturas-discretas-2019/",
+      "new_path": "/estruturas-discretas-2019/"
+    },
+    {
+      "title": "Modelos de Computação 2019",
+      "old_url": "https://brunoloff.wordpress.com/modelos-de-computacao-2019/",
+      "new_path": "/modelos-de-computacao-2019/"
+    },
+    {
+      "title": "A problem about moduli",
+      "old_url": "https://brunoloff.wordpress.com/computational-complexity-group/a-problem-about-moduli/",
+      "new_path": "/computational-complexity-group/a-problem-about-moduli/"
+    },
+    {
+      "title": "Computational Complexity Group",
+      "old_url": "https://brunoloff.wordpress.com/computational-complexity-group/",
+      "new_path": "/computational-complexity-group/"
+    },
+    {
+      "title": "Estruturas Discretas 2018",
+      "old_url": "https://brunoloff.wordpress.com/estruturas-discretas-2018/",
+      "new_path": "/estruturas-discretas-2018/"
+    },
+    {
+      "title": "Modelos de Computação 2018",
+      "old_url": "https://brunoloff.wordpress.com/modelos-de-computacao-2018/",
+      "new_path": "/modelos-de-computacao-2018/"
+    },
+    {
+      "title": "02. Parametric complexity",
+      "old_url": "https://brunoloff.wordpress.com/selected-topics-in-computational-complexity/02-parametric-complexity/",
+      "new_path": "/selected-topics-in-computational-complexity/02-parametric-complexity/"
+    },
+    {
+      "title": "Publications",
+      "old_url": "https://brunoloff.wordpress.com/publications/",
+      "new_path": "/publications/"
+    },
+    {
+      "title": "All posts",
+      "old_url": "https://brunoloff.wordpress.com/all-posts/",
+      "new_path": "/all-posts/"
+    },
+    {
+      "title": "Selected Topics in Computational Complexity",
+      "old_url": "https://brunoloff.wordpress.com/selected-topics-in-computational-complexity/",
+      "new_path": "/selected-topics-in-computational-complexity/"
+    },
+    {
+      "title": "Hello!",
+      "old_url": "https://brunoloff.wordpress.com/",
+      "new_path": "/"
+    },
+    {
+      "title": "About",
+      "old_url": "https://brunoloff.wordpress.com/about/",
+      "new_path": "/about/"
+    },
+    {
+      "title": "01. StrongP vs StrongNC",
+      "old_url": "https://brunoloff.wordpress.com/selected-topics-in-computational-complexity/lecture-1/",
+      "new_path": "/selected-topics-in-computational-complexity/lecture-1/"
+    }
+  ],
+  "assets": [
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/1-s2-0-s0168007209000062-main.pdf",
+      "path": "/assets/uploads/2015/02/1-s2-0-s0168007209000062-main.pdf",
+      "bytes": 2575051,
+      "sha256": "865ea3659aeee9e039e492e0c6b164aec07563f1b8e353a53c8aa4405cb2bc03"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/benamram2010.pdf",
+      "path": "/assets/uploads/2015/02/benamram2010.pdf",
+      "bytes": 187894,
+      "sha256": "f1fc2ecfcd5cac2dd9348f65b44435f9b6ab770da27ba6f3ecb9d14801de2ab4"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/bppr.pdf",
+      "path": "/assets/uploads/2015/02/bppr.pdf",
+      "bytes": 189516,
+      "sha256": "18fdfcff30324d5f5ee67d0e6a0ed28507fcb60451e57cdecdf6eb9f21abbe95"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/catalytic-space.pdf",
+      "path": "/assets/uploads/2015/02/catalytic-space.pdf",
+      "bytes": 805106,
+      "sha256": "6759b973e19043bb4809abe5b18d46d92997b14ad4ab1e0552f7b31f9cc0cde1"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/fiveviews.pdf",
+      "path": "/assets/uploads/2015/02/fiveviews.pdf",
+      "bytes": 194118,
+      "sha256": "be65135e6bc3654aa6c00bb3500e139b5150430ac67bd82a337ef5ca93ab50f0"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/knapsack.pdf",
+      "path": "/assets/uploads/2015/02/knapsack.pdf",
+      "bytes": 1139698,
+      "sha256": "b7859dddc7ed4c379041fc64326566d69d93b8b435a5dd92fdf069efb80ffbd2"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture02.pdf",
+      "path": "/assets/uploads/2015/02/lecture02.pdf",
+      "bytes": 191115,
+      "sha256": "43bef68f4465a69ee3ad2ddb700981cfb84d37377fbda8cf64f794bbef7be9ce"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture04.pdf",
+      "path": "/assets/uploads/2015/02/lecture04.pdf",
+      "bytes": 234873,
+      "sha256": "43ea61cbe0451e6847e3026a5c68be6bf6d6443e3d08aad8d59ea415159fde63"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture06.pdf",
+      "path": "/assets/uploads/2015/02/lecture06.pdf",
+      "bytes": 217656,
+      "sha256": "6adaef59362e97a82a8e8dd18247f8a4b70b7e8236c444393380c6105a4852bc"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture07.pdf",
+      "path": "/assets/uploads/2015/02/lecture07.pdf",
+      "bytes": 183802,
+      "sha256": "cba4924587a4f69c668bb817070ac3e65f444c16480ca3eec269f2a687766b0f"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture08.pdf",
+      "path": "/assets/uploads/2015/02/lecture08.pdf",
+      "bytes": 202357,
+      "sha256": "c332f1967c4a4f4407b967100a4d673bb82bb57cb83f5a03b33c8e1a03e6b780"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lecture09.pdf",
+      "path": "/assets/uploads/2015/02/lecture09.pdf",
+      "bytes": 218215,
+      "sha256": "e0b2bb429188da214b076c1a6eeb69479a619df65bec21dcbba568f5fcc4cd23"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/lrss.pdf",
+      "path": "/assets/uploads/2015/02/lrss.pdf",
+      "bytes": 465526,
+      "sha256": "b43815b91182622e916491c35fe2f3d1e8b6deff382486b5cb727bcc3cb27efb"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/mulmuley.pdf",
+      "path": "/assets/uploads/2015/02/mulmuley.pdf",
+      "bytes": 595161,
+      "sha256": "a758210e49097d7568ee639da1474a6428a46ae621ec6ac35fa92467eef086aa"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/note-on-the-power-of-threshold-circuits.pdf",
+      "path": "/assets/uploads/2015/02/note-on-the-power-of-threshold-circuits.pdf",
+      "bytes": 360569,
+      "sha256": "ae4be5a12515427d4f52085939b3a50ea091c4e49539b5ad0a249df9d057c1d4"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/rbrk.pdf",
+      "path": "/assets/uploads/2015/02/rbrk.pdf",
+      "bytes": 257705,
+      "sha256": "df7a52983688ecb4bf5bb52883346c8bc348ad15e6dfbf9b803364184011e270"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/reverse-newman.pdf",
+      "path": "/assets/uploads/2015/02/reverse-newman.pdf",
+      "bytes": 646544,
+      "sha256": "bb438d51546aab8a6cc08cfc3310527d882b9170aa0b536627ddbc3492ef817f"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2015/02/trans.pdf",
+      "path": "/assets/uploads/2015/02/trans.pdf",
+      "bytes": 499723,
+      "sha256": "a65d77ec718f07f970d7226fd69e2233af36ba7f64789041f697acf8bc088583"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2018/03/cabula.pdf",
+      "path": "/assets/uploads/2018/03/cabula.pdf",
+      "bytes": 117609,
+      "sha256": "f9b707328ebd8edc09b4b4862b5348777634c3d896cd4e514d4de0970e42bac0"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2018/06/stoc18main-p242-p-9f3bc3b-36640m-final.pdf",
+      "path": "/assets/uploads/2018/06/stoc18main-p242-p-9f3bc3b-36640m-final.pdf",
+      "bytes": 901684,
+      "sha256": "bd6e992519292b0d92c086e98e15a3f7b3ab6dfc1009f7c72d35911a0f0e5e13"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2018/09/notaslogica.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2018/09/notaslogica.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2019/03/comoestudar.v1.pdf",
+      "path": "/assets/uploads/2019/03/comoestudar.v1.pdf",
+      "bytes": 145947,
+      "sha256": "75304a85e4da2b40e56b0879ed30cfd1fa08a5047e5ecdc6956ac0a57a37effa"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2019/03/zoo.gif",
+      "path": "/assets/uploads/2019/03/zoo.gif",
+      "bytes": 6760,
+      "sha256": "326b64036c0dafce8e75176f6a6c1136b47bf8177588bdd440e3c5b3f02b742f"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/02/pdf.png",
+      "path": "/assets/uploads/2020/02/pdf.png",
+      "bytes": 9559,
+      "sha256": "28610c8f852bbcd450410fc7ee53e6f9293617d1b820bc093c9fb059dfcb07f2"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/02/youtube-icon.png",
+      "path": "/assets/uploads/2020/02/youtube-icon.png",
+      "bytes": 924,
+      "sha256": "c472538a4b3fbe768b5340660c645cd3a4f54cd7a7370ba16648cfd3dabcd93c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/02/youtube_icon_small.png",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2020/02/youtube_icon_small.png"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/04/2020-03-30-note-10-50.pdf",
+      "path": "/assets/uploads/2020/04/2020-03-30-note-10-50.pdf",
+      "bytes": 694265,
+      "sha256": "dcdf755444c11d0a887e6db2e6b2cde9be756647bf0b2c2ee79a1c6b32f26b21"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/04/2020-04-20-note-10-54.pdf",
+      "path": "/assets/uploads/2020/04/2020-04-20-note-10-54.pdf",
+      "bytes": 1323297,
+      "sha256": "8102e2e65b46af1cf49bdd39c20d19d903d8833f1d889891b315450fc5fe3f78"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/04/notas.pdf",
+      "path": "/assets/uploads/2020/04/notas.pdf",
+      "bytes": 129161,
+      "sha256": "0b1f67a25041b34da1982b8f331ce684fdee88e4056164feba32659034a4ea7a"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/05/2020-05-04-note-09-40.pdf",
+      "path": "/assets/uploads/2020/05/2020-05-04-note-09-40.pdf",
+      "bytes": 683168,
+      "sha256": "ed45cae00e330720bd14b6601ca83aac8ac87a0f781ed83c983eb1285e192a3b"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/10/aula-03.pdf",
+      "path": "/assets/uploads/2020/10/aula-03.pdf",
+      "bytes": 279071,
+      "sha256": "73cbc05428747dba7b35b29be4089412ac672e90015954dd6cafd9929abda9fe"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/10/aula-07.pdf",
+      "path": "/assets/uploads/2020/10/aula-07.pdf",
+      "bytes": 173784,
+      "sha256": "ec632dd85e83a213f9883b2bfb60391437eaa9b2a38a7fb09489f2bec9e0d6cf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/10/aula-08.pdf",
+      "path": "/assets/uploads/2020/10/aula-08.pdf",
+      "bytes": 152009,
+      "sha256": "cd34429db49d017880f8f1fa12537d8f30df9c4cd39a41cabbc927de1e3c2836"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/10/estudo01.pdf",
+      "path": "/assets/uploads/2020/10/estudo01.pdf",
+      "bytes": 45929,
+      "sha256": "6ac734f0d0506630228e48278c66582365198e354b34b139b23c8d18827e5da1"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/10/estudo01.prog_.pdf",
+      "path": "/assets/uploads/2020/10/estudo01.prog_.pdf",
+      "bytes": 83362,
+      "sha256": "b68738c2b28a911a975a5c3b9dc2724a97ae346f0109cc6c25c562a4436c225d"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/aula-09-1.pdf",
+      "path": "/assets/uploads/2020/11/aula-09-1.pdf",
+      "bytes": 166061,
+      "sha256": "c8c6c5410e47f37581d1b1d33ea048a76c684dc3c96622d6347817c1a789e9d0"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/capitulos.pdf",
+      "path": "/assets/uploads/2020/11/capitulos.pdf",
+      "bytes": 57643,
+      "sha256": "e878d3b3f52cf89d4b506abc3055501402de423f5fa40c9c259503aaa0917677"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/estudo02.pdf",
+      "path": "/assets/uploads/2020/11/estudo02.pdf",
+      "bytes": 104079,
+      "sha256": "03ba428a1bd8d2814875a00834ab791c0a50e91f64748ba6a223e3663bf7436c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/estudo03.pdf",
+      "path": "/assets/uploads/2020/11/estudo03.pdf",
+      "bytes": 112257,
+      "sha256": "16906d3fe1e997f50394824da2b31b4ded72d657906f02fb24f6cda62f0cac3d"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/estudo04.pdf",
+      "path": "/assets/uploads/2020/11/estudo04.pdf",
+      "bytes": 91741,
+      "sha256": "bfd217d7dda6d1025cbb6b6e38a18c384a689a3cb0d19143bbd1429d32113b48"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/11/projecto01.pdf",
+      "path": "/assets/uploads/2020/11/projecto01.pdf",
+      "bytes": 88508,
+      "sha256": "3c6c4a5b51e78e395d2df38454a187812cea501b3656aaf8b95afe8f4da1f7a6"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/12/projecto01.sub_.pdf",
+      "path": "/assets/uploads/2020/12/projecto01.sub_.pdf",
+      "bytes": 92982,
+      "sha256": "b97785f359f79772ee03778f7ba205a31a23a0ff2279a7090b4bbf206c23c625"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/capitulos2.pdf",
+      "path": "/assets/uploads/2021/01/capitulos2.pdf",
+      "bytes": 35833,
+      "sha256": "064938c6a617cc8659a91b1835d098525def61d0f03fa9f18067b8355ed6aced"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/estudo05.pdf",
+      "path": "/assets/uploads/2021/01/estudo05.pdf",
+      "bytes": 68079,
+      "sha256": "9efbdcfcf552853052053ba7911b9e34da7b44ff71f6159145cc9bbe03d0c585"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/exerc_cio_capacidade1.pdf",
+      "path": "/assets/uploads/2021/01/exerc_cio_capacidade1.pdf",
+      "bytes": 172026,
+      "sha256": "86492086d769365b934f4c4718a248857ebfdad6643b64660cf2a75c9fce0f56"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/projecto02.pdf",
+      "path": "/assets/uploads/2021/01/projecto02.pdf",
+      "bytes": 93576,
+      "sha256": "d2ae8941043c2c8af5678fdbd4c05bb4fb13d27f213dc56f771951eadfe786a4"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/teoria-da-informacao-resultados-trabalho-12.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2021/01/teoria-da-informacao-resultados-trabalho-12.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/trabalho-2.pdf",
+      "path": "/assets/uploads/2021/01/trabalho-2.pdf",
+      "bytes": 25151,
+      "sha256": "9d1e2e3936684b2bb8831a67bd8852e1d34a931763b9d9594368104e4feaa29e"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/02/teoria-da-informacao-resultados-notas-finais.pdf",
+      "path": "/assets/uploads/2021/02/teoria-da-informacao-resultados-notas-finais.pdf",
+      "bytes": 44952,
+      "sha256": "631efb7ba55ac855029307526801020391a983929dff06cae0a272b9db4c9c52"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/02/teoria-da-informacao-resultados-trabalho-21.pdf",
+      "path": "/assets/uploads/2021/02/teoria-da-informacao-resultados-trabalho-21.pdf",
+      "bytes": 41892,
+      "sha256": "4680cc60924d1ed5d171f5971e2ecd2934bf199635836c7df08263621fbdc660"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/06/3870-texto-do-trabalho-9911-1-10-20140512.pdf",
+      "path": "/assets/uploads/2021/06/3870-texto-do-trabalho-9911-1-10-20140512.pdf",
+      "bytes": 430771,
+      "sha256": "3b8b60b2a03c15422192fb44b82eb46cb52a2ee4215ad5ba52e42ef2a0058e5c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/10/02.-probabilidades-1-1.pdf",
+      "path": "/assets/uploads/2021/10/02.-probabilidades-1-1.pdf",
+      "bytes": 272666,
+      "sha256": "f467b4745201a872652c59e0c27b40d9674f1f3ea5bd8f8f3d6e2de4e4cda88b"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/10/03.-probabilidades-2.pdf",
+      "path": "/assets/uploads/2021/10/03.-probabilidades-2.pdf",
+      "bytes": 48762,
+      "sha256": "cd4aad83b567d3243d57da66769177f091ef2e4607af5f39d938c1ae37674198"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/11/project1.pdf",
+      "path": "/assets/uploads/2021/11/project1.pdf",
+      "bytes": 117345,
+      "sha256": "6255e546a8aa4442c8402905c3a7ada7e97532994aebe1495e8485b5ddcdbe92"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/01/project2.pdf",
+      "path": "/assets/uploads/2022/01/project2.pdf",
+      "bytes": 97721,
+      "sha256": "887a1d0120cb67576abcaab7c933ccd0bd71e16bfd4f1be47e9f6dd9952a967f"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/capitulos.pdf",
+      "path": "/assets/uploads/2022/10/capitulos.pdf",
+      "bytes": 36395,
+      "sha256": "565fa07b77191e0aeca4cfb427035de98bc1f62ddf80c36334ea100c3197474d"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/estudo04.pdf",
+      "path": "/assets/uploads/2022/10/estudo04.pdf",
+      "bytes": 102416,
+      "sha256": "2febb9fb0579d88154734856ea930d20fba936f52fecc11cff94317a4014c107"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/projecto01.pdf",
+      "path": "/assets/uploads/2022/10/projecto01.pdf",
+      "bytes": 96575,
+      "sha256": "a08151b66ba69d265383ff547d5098dcd2af7fb91a66defe38322ca592da514c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/test01-1.pdf",
+      "path": "/assets/uploads/2022/10/test01-1.pdf",
+      "bytes": 138500,
+      "sha256": "881ad03a0bfbadabb60ed80c40660fa491efca487ec354990761196c916838fa"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/teste01.pdf",
+      "path": "/assets/uploads/2022/10/teste01.pdf",
+      "bytes": 118725,
+      "sha256": "dcb5b543dd36e620f72c8a80af8e72f8b7e2dd8036d9c3203103e5a202c79421"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2022/10/teste01b.pdf",
+      "path": "/assets/uploads/2022/10/teste01b.pdf",
+      "bytes": 108937,
+      "sha256": "fa4471faa1e24439bdaba6b7e341620037ea66a1424ec2e73306b3d60a801576"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/01/projecto02pt.pdf",
+      "path": "/assets/uploads/2023/01/projecto02pt.pdf",
+      "bytes": 123760,
+      "sha256": "2e4769743e6c671a6d2a46fffe7121f526296302218e10c867bc36bf6bf56257"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/03/fcul.png",
+      "path": "/assets/uploads/2023/03/fcul.png",
+      "bytes": 20008,
+      "sha256": "2c13d9baef7d5cff036d1b71f77643b25f6867d33ed7c324e916d23f666897d4"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/03/lasige.jpg",
+      "path": "/assets/uploads/2023/03/lasige.jpg",
+      "bytes": 18689,
+      "sha256": "b9ac06bbfdd3785112d8dff967a537d841405ecb0ec575a8108a983c0b8ecbd7"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/07/img_20220712_210847-names.jpg",
+      "path": "/assets/uploads/2023/07/img_20220712_210847-names.jpg",
+      "bytes": 521619,
+      "sha256": "b7f128ad5e0492365716a740c50c44ba4e1f0a97da227f5faf192d997ccfe02e"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/09/01.pdf",
+      "path": "/assets/uploads/2023/09/01.pdf",
+      "bytes": 151977,
+      "sha256": "d6d0ff7e8e164b3eb61366af637b389eb976b0b8cbb1a985f8053b6539755e44"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/09/01.sol_.pdf",
+      "path": "/assets/uploads/2023/09/01.sol_.pdf",
+      "bytes": 156171,
+      "sha256": "6a1ada0b853b9378828146a5be32bf3eb77011e8a1f6656e7c4f06478cfd2d18"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/10/02.pdf",
+      "path": "/assets/uploads/2023/10/02.pdf",
+      "bytes": 123605,
+      "sha256": "545bdacd67d4ee55f780a8429f120ca65178749ba7c2dac2a288108eda0422cd"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/10/02.sol_.pdf",
+      "path": "/assets/uploads/2023/10/02.sol_.pdf",
+      "bytes": 185891,
+      "sha256": "b5199cb7eafd57a828054182143f7d4f69711bfc4126217ef2c12d71085fe8c0"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/10/03.pdf",
+      "path": "/assets/uploads/2023/10/03.pdf",
+      "bytes": 48037,
+      "sha256": "c59b1ade8411b7af19bfa92fdca96716a739d4dc138cfdf09ee43e13737e0368"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/10/04.pdf",
+      "path": "/assets/uploads/2023/10/04.pdf",
+      "bytes": 114724,
+      "sha256": "ed02986a90f3bb1b640a5c5f907c21c15de138d5692a45cc6fedd63ad75efa29"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2023/10/tpc_complexidade_computacional.pdf",
+      "path": "/assets/uploads/2023/10/tpc_complexidade_computacional.pdf",
+      "bytes": 111428,
+      "sha256": "51133570cdf406f2fa97d5668a8fe0b8c742454bfb3ba36ada6922c483ebda86"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/09/01.pdf",
+      "path": "/assets/uploads/2024/09/01.pdf",
+      "bytes": 172830,
+      "sha256": "57f8f6317d2ed6d39bfccd5f323621b8b383f3571173b7c402fe606881da1e94"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/09/02-1.pdf",
+      "path": "/assets/uploads/2024/09/02-1.pdf",
+      "bytes": 122544,
+      "sha256": "32c79a77045e66f09fbd5c8c79ef19ed93daa49e0a3d800228d74e0744977677"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/09/03.pdf",
+      "path": "/assets/uploads/2024/09/03.pdf",
+      "bytes": 164791,
+      "sha256": "6cdbd50f139d167393a6d4d8ea49423f9c773d9dda5d94399be2d9153d003926"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/04.pdf",
+      "path": "/assets/uploads/2024/10/04.pdf",
+      "bytes": 65642,
+      "sha256": "f8c206486f8453c386ba0c8831dc14d5254e18cddaf889f8eee2f76a12d66135"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/05.pdf",
+      "path": "/assets/uploads/2024/10/05.pdf",
+      "bytes": 110834,
+      "sha256": "ea25af521d4b9d2bfd11e226a92560d3ee01b1f85f395f2b3e201b3b9db5f843"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/06.pdf",
+      "path": "/assets/uploads/2024/10/06.pdf",
+      "bytes": 106010,
+      "sha256": "f07b9a7e5dc0b935fa5a60859b216f049e1bb806386c95423de6bd4135da620e"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/07-combinatorial-complexity-notes.pdf",
+      "path": "/assets/uploads/2024/10/07-combinatorial-complexity-notes.pdf",
+      "bytes": 219801,
+      "sha256": "63e250fc6f437685957e619da7ce9f124fe48136aa8fbe1b06d09d354e121715"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/07.pdf",
+      "path": "/assets/uploads/2024/10/07.pdf",
+      "bytes": 132984,
+      "sha256": "3380b3d0727e482560d7a4f7a2e9a6ce6d0678cb1f45577ef7c2791a448f24db"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/lecture-06-l-vs-nl-bgs.pdf",
+      "path": "/assets/uploads/2024/10/lecture-06-l-vs-nl-bgs.pdf",
+      "bytes": 188893,
+      "sha256": "bd7340de2ca241488f9939a281643ffaa3d071285565eec1bf972769fb29dbcb"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/10/today-spacememory.pdf",
+      "path": "/assets/uploads/2024/10/today-spacememory.pdf",
+      "bytes": 229883,
+      "sha256": "38c1bee104fb149120d1e0a4a19260c107aa38d0c128bb97e4e20a800fd4f0d8"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/08-formula-lower-bounds-notes.pdf",
+      "path": "/assets/uploads/2024/11/08-formula-lower-bounds-notes.pdf",
+      "bytes": 397336,
+      "sha256": "4601bb9ccf1a9bcbd6c4af99ca6e189936c9db5a5fa39e46272336d22ec553f8"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/08.pdf",
+      "path": "/assets/uploads/2024/11/08.pdf",
+      "bytes": 136975,
+      "sha256": "9b45fc90c3085e8a446038244f2d04f6b8133db9abeda2df824a46f1e6cabe83"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/09-randomized-computation-notes.pdf",
+      "path": "/assets/uploads/2024/11/09-randomized-computation-notes.pdf",
+      "bytes": 365108,
+      "sha256": "c715fa3cb876d7c9a727b47c5441e95162755719aa3285e4b578d7e641785105"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/09.pdf",
+      "path": "/assets/uploads/2024/11/09.pdf",
+      "bytes": 128710,
+      "sha256": "1a348c889abda9b964a00f8b05751b47c6286455ed8d6facf25820dfb983223c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/10-cryptography-private-key-crypto-one-way-functions-prgs.pdf",
+      "path": "/assets/uploads/2024/11/10-cryptography-private-key-crypto-one-way-functions-prgs.pdf",
+      "bytes": 408608,
+      "sha256": "94b42f0772467fe49e6aa8ea0e935166354fe05ef9c1f1e16e9f1d631583ace6"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/10.pdf",
+      "path": "/assets/uploads/2024/11/10.pdf",
+      "bytes": 51919,
+      "sha256": "6ad0e68a35fa09288a72faa7d8f3f17afabe1631c44f5ec5f557925cdff9f290"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/1st-test-solutions.pdf",
+      "path": "/assets/uploads/2024/11/1st-test-solutions.pdf",
+      "bytes": 101394,
+      "sha256": "45ab6673565f556b2362193493b48adf005a4ea2f8d915c8f031fb8087a7f7ab"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/11/teste01.pdf",
+      "path": "/assets/uploads/2024/11/teste01.pdf",
+      "bytes": 119851,
+      "sha256": "3d66da3909c987b61e3a471da2e9b0c9865809df20e8a9e29babe69839239d94"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/12/11.pdf",
+      "path": "/assets/uploads/2024/12/11.pdf",
+      "bytes": 139322,
+      "sha256": "7e75d241e5158548647e0bca0348363b1e7a618324a6146d474fde09f350e23c"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/12/12-class-notes.pdf",
+      "path": "/assets/uploads/2024/12/12-class-notes.pdf",
+      "bytes": 327099,
+      "sha256": "b39ea82fa2439c99b79ee10eb20f39e27de895856c2e5583972301fad9554f9b"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/12/13-tmp.pdf",
+      "path": "/assets/uploads/2024/12/13-tmp.pdf",
+      "bytes": 298847,
+      "sha256": "3929f6a4183e13cf00fb3268826361b20050ac378e279482ab4fd50a07146f0b"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2024/12/14-notes.pdf",
+      "path": "/assets/uploads/2024/12/14-notes.pdf",
+      "bytes": 156669,
+      "sha256": "173b3bfbfd334abd9429fd48308d2864e8e36f09d48611d368a19dce8cfa12c8"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/01/teste02.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2025/01/teste02.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/09/ex01sols.pdf",
+      "path": "/assets/uploads/2025/09/ex01sols.pdf",
+      "bytes": 283516,
+      "sha256": "fbd90a2921176d0c607f082826a58b7c3410bf8041f1d9747ea369e74f55526a"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/09/ex02.pdf",
+      "path": "/assets/uploads/2025/09/ex02.pdf",
+      "bytes": 306189,
+      "sha256": "548b436877845d54abd97275e4fe376006a89d8f4a6cecf4be1d72a1296517f1"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/10/whatsapp-image-2025-10-02-at-17.54.34-1.jpeg",
+      "path": "/assets/uploads/2025/10/whatsapp-image-2025-10-02-at-17.54.34-1.jpeg",
+      "bytes": 166665,
+      "sha256": "f619f550d647df5976e494a4368257a482087100631e89354fe03bbaf5e0ba02"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/12/natural-proofs-barrier-against-data-structure-lower-bounds-v1.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2025/12/natural-proofs-barrier-against-data-structure-lower-bounds-v1.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/12/natural_proof_barrier_for_data_structures-8.pdf",
+      "path": "/assets/uploads/2025/12/natural_proof_barrier_for_data_structures-8.pdf",
+      "bytes": 532825,
+      "sha256": "5e8449b2c39ca95d51686178c02eb80b7bed2d5542e8627b056e21401c752eae"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2026/04/gemini_generated_image_f6n0tpf6n0tpf6n02.jpg",
+      "path": "/assets/uploads/2026/04/gemini_generated_image_f6n0tpf6n0tpf6n02.jpg",
+      "bytes": 530664,
+      "sha256": "2d7bbefd8f736d940cbb4b9094dc9c1383ee2fd15aed6667836afc7e41ef12d4"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2026/06/natural_proofs_barrier_in_constant_depth_circuits-3.pdf",
+      "path": "/assets/uploads/2026/06/natural_proofs_barrier_in_constant_depth_circuits-3.pdf",
+      "bytes": 650559,
+      "sha256": "e41423f419fbe80971d3dfdb88ed2ac5cf2f951cc8b93472b4fa891f90495925"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%28a_i%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/270a367011ddf600b354.png",
+      "bytes": 303,
+      "sha256": "344cadf071afd7151af0d940946178b0211758d28e8125b61323a85204197fa9"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%28a_i%29_%7Bi+%5Cin+%5Cmathbb+N%7D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/bd8f3604a429984e763b.png",
+      "bytes": 387,
+      "sha256": "fa0466cc9617b1a593b1664bd51e34cd0631bec349b41ed4e8d139f6aa0f6e4b"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%3A&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/c6461c8f025c6765ad35.png",
+      "bytes": 130,
+      "sha256": "fea4de77480131b7aaf57574b98df0c724167fb663dc3bd77b36bdf8960a5709"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%3C%2C+%5Cle&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/5eab355544630a43f169.png",
+      "bytes": 261,
+      "sha256": "3606edf42adc2fc8e681262ad689baeb346569533ce1b415311f139dc238f026"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%3D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/c20ef7dedf6d1cf07024.png",
+      "bytes": 118,
+      "sha256": "4c22e68d039ea67efc73e263760dc4d5be16de126554c56f88006c89e34eefe4"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Ccirc+%5Cin+%5C%7B%2B%2C+-%2C+%5Ctimes%5C%7D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/5ab7510927b9c341fc70.png",
+      "bytes": 444,
+      "sha256": "d5433c58964505f3d5250134ec7fa2b5f3553ec61073e2f667fd30efd4f4f320"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cell&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/c8e77eb0003df4baf636.png",
+      "bytes": 183,
+      "sha256": "ddddac2de52004448197c9ce1d966f363cdfe44e070dae0975fda487175c1b49"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cell_%7B2+k%7D%28a%2C+b%29+%3D+%5Cmin_m+%5Cell_k%28a%2C+m%29+%2B+%5Cell_k%28m%2C+b%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/adfd49dfb8ab1b277758.png",
+      "bytes": 958,
+      "sha256": "6a732ee64a3b85e09350c4501f98731c27092b95e0af213fb7d7ecd14e371e34"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cell_k%28a%2C+b%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/fc7a2f77474d1d43030a.png",
+      "bytes": 418,
+      "sha256": "d662e16a2f4c75fad095f0debe4101dc77ca2b71b2e3739d82af75c5eb8e19a8"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cell_k%28a%2C+b%29+%3D+%5Cinfty&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/e8d04b1ab82a73125d60.png",
+      "bytes": 517,
+      "sha256": "2ea1d628cdfd255ca6b70195c98806afde2357c70b6b1c8042ba330b2a4c5675"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Clambda&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/b494d57cfcd31e8e3814.png",
+      "bytes": 191,
+      "sha256": "4914acb149157bf276cd146794ad4dcc988d62e9ce2fecb63fae9f1550e9116f"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Clog+n+%2F+%5Clog+%5Clog+n&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/e0b0c25341b03f585d6b.png",
+      "bytes": 453,
+      "sha256": "2a9efca7d3309d9f523e57ebc9f2e04b508c04897d77acffe580e66ef1dea2af"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathbb+R%5En&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/fb5cba52930d9ce81ad0.png",
+      "bytes": 238,
+      "sha256": "78c17dd2a52f41d3b71469d47e32a64fc7896b02f99054908628eecc9251e5f5"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathcal+A&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/41584869adb2e8a7e255.png",
+      "bytes": 216,
+      "sha256": "358323bd21e6a6f9a7285f2605ec515cacb06880277c8583446f361a9dc2dcad"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BAC%7D%5E0&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/fa29b903924073d3613f.png",
+      "bytes": 294,
+      "sha256": "64f5042e8f74593bd6b3aa0b80efd762d1939e09f795b8f22aa1d62a9c8899bc"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BAC%7D_0&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/9c6ce9df9cb3d8108726.png",
+      "bytes": 299,
+      "sha256": "b171dc70d30fcf1694125562e54d79c5cfd921d152fb16f278ca4d0e9d33383f"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BKC%7D%28%5Cmathit%7Bpoly%7D%28n%29%2C%5Cmathit%7Bpoly%7D%28n%29%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/1d12aaef5a90061a3faa.png",
+      "bytes": 863,
+      "sha256": "b96a707293b875618e9ccc2c953f9c24489e39a7e52e0c50bebb4a59818da1a3"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BKC%7D%28%5Cmathit%7Bpoly%7D%28n%29%2C%5Cmathit%7Bpolylog%7D%28n%29%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/8713d90a0dd4d397a12b.png",
+      "bytes": 879,
+      "sha256": "e96acf896c22b6ac18509fe39a45fbb608ecbfcacff5456cddba5590c04a659a"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BKC%7D%282%5E%7Bo%28%5Csqrt+n%29%7D%2C+o%28%5Csqrt+n%29%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/bd62a035b75cea5a6423.png",
+      "bytes": 736,
+      "sha256": "2309579da49ea342b335f125a53588c20b109fd80f03d99a41c0649a7d1a2a5c"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BKC%7D%28p%2C+t%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/188ca96053914bab14af.png",
+      "bytes": 476,
+      "sha256": "f34db342e673374ff8acf2c7dabfd065aaabe7c42092017b68c6496096a48986"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BKC%7D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/91c9e846b6660a1d8b78.png",
+      "bytes": 261,
+      "sha256": "1e779dd94378fb90763f2f8127c5941832a8dfd7c0e9e601f8c1fb9cb895852a"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BlinKC%7D%28%5Cmathit%7Bpoly%7D%28n%29%2C+O%28%5Clog+n%29%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/a02322d59c932703aaa0.png",
+      "bytes": 896,
+      "sha256": "5740f3f0d3d5e6d29a5b895b2070af99ec9058da3978e6540f6507d9cbb976ec"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathrm%7BlinKC%7D%282%5E%7Bo%28%5Csqrt+n%29%7D%2C+o%28%5Csqrt+n%29%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/2894cb2042be72e0718e.png",
+      "bytes": 793,
+      "sha256": "54b65d5f00c7e5cb5cc98e1b8396f9f8d9393ae193c0424f9c029232d526a404"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%5Cmathsf%7Bdepth%7D%28%5Coplus_n%29+%3D+2+%5Clog+n&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/101fb1258df220cb500c.png",
+      "bytes": 711,
+      "sha256": "2c0f521b175d63db25bedce3294aa9ee26199b24aaace8a335b4d29b8ce16b54"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=%7C%5C%7B+a_i+%5Cmod+n+%5Cmid+i+%3D+1%2C%5Cldots%2C+n+%5C%7D%7C+%3D+n&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/d5d879aec5c75510d28b.png",
+      "bytes": 774,
+      "sha256": "bc4cd3168010693b30c6483ae1dace89ad418653e4cb9d40bba8989ec3edc65a"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=A+%5Cin+%5Cmathcal+A&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/c18e3a21baf41c686e7f.png",
+      "bytes": 326,
+      "sha256": "b6bee4d3ace2b78ad785df2d33acc3a8749c3c77509d1f82769bcddad4fda9ae"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=H_%7B7%2C4%7D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/57c9047a66821cef4f84.png",
+      "bytes": 305,
+      "sha256": "fe2ff1b460fee66b07605af93e3471070f84746112fe678546de3f460cb773cc"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=K&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/bac647c34a8dc7c97f03.png",
+      "bytes": 227,
+      "sha256": "b3fb234c642e7f255c823d26d9ec089426fd42398990a706357855e8b6253add"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=O%28%5Clog+n%29&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/c52a8aa6f4bf79d6a38b.png",
+      "bytes": 449,
+      "sha256": "4199ec3e9c6d29b7195da3fe9af9023ecad116441e9b938be0140346724a4b78"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=P&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/cdfae6a030948134c021.png",
+      "bytes": 215,
+      "sha256": "1b00c69ac5217d6b68c1a38bc0f64b2da54656c48947b2e6df8952ea5f4b6b0b"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=X&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/a946dcf786d8a4b3be30.png",
+      "bytes": 210,
+      "sha256": "9fef98769a5f7fba64e9e42c73251193f7f92cf8c2a72cb97a92d1bb1181ea33"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=a&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/f348be74cce51fbbba0e.png",
+      "bytes": 189,
+      "sha256": "32746385f70b8832c48e54c746cbad5dd801ceeb6be49f69771b56dc4c849227"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=b&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/71bfc11364cbb2e8753c.png",
+      "bytes": 195,
+      "sha256": "12e0b93c1b3e4a8215c47066c22d1f1e08ab2cce406aaf0856c7218a90e5fbd2"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=k%3D0%2C%5Cldots%2Cn-1&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/597aa7a8b0844cbb1a6a.png",
+      "bytes": 437,
+      "sha256": "ae121e1fc628d572665a92427404910b2b1999594a146f3ad2c55394b6f972c4"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=k&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/91feccea5f843a8decd5.png",
+      "bytes": 200,
+      "sha256": "ad6e87244e94094c012c10cccc0a7ba0e3bc65a481c387c50245d850981829d6"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=n%5E%7BO%281%29%7D&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/f113293d80da968a3135.png",
+      "bytes": 307,
+      "sha256": "3f55d93f21ce7ff163dd16b1ba85a205102f5c01a2da306b68cadfcfdcd6fbe5"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=n%5E2&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/bdc21058276850a0c933.png",
+      "bytes": 232,
+      "sha256": "d8c17c6e4317789177ced32e6c94e88a2d344bdddfe98fc41a634c9c0189a1ab"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=n&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/6b404e944fefabe1472b.png",
+      "bytes": 195,
+      "sha256": "94a9e6ac230e2ea609544450e83dd55db20eea952022cd4092217efe4c0e99bf"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=n+%5Cin+%5Cmathbb+N&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/01e8e20139d21517d0db.png",
+      "bytes": 329,
+      "sha256": "778c675fca3739ca2aed999f7a42548e81e3695d87efba857ad316f09e203f65"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=u&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/ade0997299394e2d5a78.png",
+      "bytes": 189,
+      "sha256": "51eca7238440460b84f11608a67f6f95439266a04d776390701ed1e878bbdc35"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=u+%3A%3D+%5Cuparrow+v&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/8c550f965195ea97ae37.png",
+      "bytes": 299,
+      "sha256": "ca13bca4d91c2740b7d5770cfdd5e402809397368f7c09f77429f44cc1a0bf54"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=u+%3A+0&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/8a194b35649d8b9255df.png",
+      "bytes": 263,
+      "sha256": "bfdfe7998a779e3fbdc21328cf30b7ea3bb5a4948e82e7f593d19a0a87944d3d"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=v&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/f6785f2c1321a2ff9c60.png",
+      "bytes": 176,
+      "sha256": "37cc944a60be16a5b5382cdf0c143eeb01d1f0cabb58b73aad649f02e4160b72"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=w&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/847b6456a28ee4218f89.png",
+      "bytes": 194,
+      "sha256": "91999768c0f7fe57ee6c6dc5fe7c80b2c8892fe65723c58cdbfe94d7f05fab16"
+    },
+    {
+      "source": "https://s0.wp.com/latex.php?latex=w+%3A%3D+u+%5Ccirc+v&bg=ffffff&fg=000&s=0&c=20201002",
+      "path": "/assets/uploads/imported/ae0251e7f20cdb45b958.png",
+      "bytes": 346,
+      "sha256": "ed9d2f976c8b199081c3c1b1d8028c48fa81908485e263b265b1c9190c984ed2"
+    }
+  ],
+  "failures": [
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/01/teste02.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2025/01/teste02.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2021/01/teoria-da-informacao-resultados-trabalho-12.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2021/01/teoria-da-informacao-resultados-trabalho-12.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2020/02/youtube_icon_small.png",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2020/02/youtube_icon_small.png"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2018/09/notaslogica.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2018/09/notaslogica.pdf"
+    },
+    {
+      "source": "https://brunoloff.wordpress.com/wp-content/uploads/2025/12/natural-proofs-barrier-against-data-structure-lower-bounds-v1.pdf",
+      "error": "404 Client Error: Not Found for url: https://brunoloff.wordpress.com/wp-content/uploads/2025/12/natural-proofs-barrier-against-data-structure-lower-bounds-v1.pdf"
+    }
+  ]
+}

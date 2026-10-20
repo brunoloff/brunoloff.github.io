@@ -1,0 +1,30 @@
+---
+layout: page
+title: Selected Topics in Computational Complexity
+permalink: /selected-topics-in-computational-complexity/
+---
+<p><b>General Information</b></p>
+<ul>
+<li>Reading material: Various sources. See below for some links.</li>
+<li>Some familiarity with computational complexity is required. Computation, circuits, etc.</li>
+</ul>
+<p><strong>Course Description &amp; Syllabus</strong></p>
+<p>Computational Complexity tries to understand how many resources a computer needs in order to solve a given problem. In this course we will be interested in proving things like <em>no algorithm <img alt="A \in \mathcal A" class="latex" src="/assets/uploads/imported/c18e3a21baf41c686e7f.png"/> can solve problem <img alt="X" class="latex" src="/assets/uploads/imported/a946dcf786d8a4b3be30.png"/></em>, where <img alt="\mathcal A" class="latex" src="/assets/uploads/imported/41584869adb2e8a7e255.png"/> is a relevant class of algorithms.</p>
+<p>In the course we have shown:</p>
+<ul>
+<li><b>Ketan Mulmuley’s Lower Bound. </b>You cannot solve the weighted maximum-flow problem in parallel – unless you do weird bit-operations on the edge-weights, which no known graph algorithm actually does.</li>
+<li><strong>Sherstov’s Degree-discrepancy Theorem.</strong> And its corollary that depth-2 majority-of-threshold circuits cannot decide all of <img alt="\mathrm{AC}_0" class="latex" src="/assets/uploads/imported/9c6ce9df9cb3d8108726.png"/> (depth-3 majority circuits can).</li>
+<li><strong>The Chronogram Method of Fredman &amp; Saks. </strong>The dynamic range problem requires <img alt="\log n / \log \log n" class="latex" src="/assets/uploads/imported/e0b0c25341b03f585d6b.png"/> query or update time (in the cell-probe model).</li>
+</ul>
+<p><strong>Summaries and Lecture Notes</strong></p>
+<ol>
+<li><strong>23-Feb</strong>. <a href="/selected-topics-in-computational-complexity/lecture-1/">Lecture 01 – StrongP vs StrongNC</a>.</li>
+<li><strong>2-Mar</strong>. <a href="/selected-topics-in-computational-complexity/02-parametric-complexity/" title="02. Parametric complexity">Parametric Complexity: an approach to proving lower-bounds for the model.</a></li>
+<li><strong>09-Mar</strong>.Exponential lower-bound on the parametric complexity of max-flow.</li>
+<li><strong>16-Mar</strong>. Finishing the proof of the lower-bound for the linear variant. <a href="/assets/uploads/2015/02/lecture04.pdf">Lecture notes</a>.</li>
+<li><strong>23-Mar.</strong> (a) Careful analysis of the complexity-4 construction of the max-flow parametrization. (b) Proof that <img alt="\mathrm{AC}^0" class="latex" src="/assets/uploads/imported/fa29b903924073d3613f.png"/> circuits can be simulated by quasi-polynomial-size depth-3 majority circuits. We will be proving that depth-2 majority circuits require exponential size. (<a href="/assets/uploads/2015/02/note-on-the-power-of-threshold-circuits.pdf">paper with proof</a>)</li>
+<li><strong>30-Mar.</strong> Communication complexity, discrepancy, threshold degree. Relating discrepancy and computability by MAJ of THR circuits. A nice corollary of Gordan’s Transposition Theorem. <a href="/assets/uploads/2015/02/lecture06.pdf">Lecture Notes</a>.</li>
+<li><strong>27-Apr</strong>. Proof of Gordan’s Transposition Theorem and – minus one lemma – Sherstov’s threshold-degree-discrepancy theorem. <a href="/assets/uploads/2015/02/lecture07.pdf">Lecture Notes</a>.</li>
+<li><strong>11-May</strong>. An explicit <img alt="\mathrm{AC}^0" class="latex" src="/assets/uploads/imported/fa29b903924073d3613f.png"/> function with high threshold degree (Minsy &amp; Papert, 1967). <a href="/assets/uploads/2015/02/lecture08.pdf">Lecture Notes</a>.</li>
+<li><strong>18-May</strong>. The cell-probe model, and the chronogram method for proving data structure lower bounds in it. <a href="/assets/uploads/2015/02/lecture09.pdf">Lecture Notes</a>.</li>
+</ol>

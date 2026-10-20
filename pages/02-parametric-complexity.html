@@ -1,0 +1,30 @@
+---
+layout: page
+title: 02. Parametric complexity
+permalink: /selected-topics-in-computational-complexity/02-parametric-complexity/
+---
+<p><strong>Summary</strong></p>
+<p>Section numbers refer to <a href="/assets/uploads/2015/02/mulmuley.pdf">Mulmuley’s paper</a>. Here is <a href="/assets/uploads/2015/02/lecture02.pdf">a write-up</a> of some of the stuff below.</p>
+<ul>
+<li>§2.2. We show that we can not get the $n$-th bit of a given number in <img alt="\mathrm{KC}(2^{o(\sqrt n)}, o(\sqrt n))" class="latex" src="/assets/uploads/imported/bd62a035b75cea5a6423.png"/>.
+<ul>
+<li>Intuitively, this is because parity is a “high-degree” problem<em>.</em></li>
+<li>Can we show that MaxFlow is also a high-degree problem, in some sense?</li>
+</ul>
+</li>
+<li>§3.1. Parametric complexity of convex optimization problems.
+<ul>
+<li>Linear parametrizations: each numerical parameter is a linear function of a parameter <img alt="\lambda" class="latex" src="/assets/uploads/imported/b494d57cfcd31e8e3814.png"/> in some interval.</li>
+<li>Complexity of a given linear parametrization = number of different slopes in the graph.</li>
+<li>Parametric complexity = complexity of most complex linear parametrization.</li>
+<li>In the next class we will see that problems with high parametric complexity are “high-degree” in some sense. The proof is similar to, but more sophisticated than, (§2.2).</li>
+</ul>
+</li>
+<li>§3.2. Parametric complexity of max-flow.
+<ul>
+<li>Via max-flow, min-cut theorem.</li>
+<li>Construction was started in class.</li>
+</ul>
+</li>
+<li><strong>Open problem.</strong> What is the parametric complexity of (weighted) perfect matching?</li>
+</ul>

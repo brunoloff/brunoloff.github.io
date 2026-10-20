@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=./sveltia-cms.schema.json
+backend:
+  name: github
+  repo: brunoloff/brunoloff.github.io
+  branch: main
+  auth_methods:
+  - token
+site_url: https://brunoloff.github.io
+display_url: https://brunoloff.github.io
+media_folder: assets/uploads
+public_folder: /assets/uploads
+collections:
+- name: homepage
+  label: Homepage
+  files:
+  - name: home
+    label: Homepage
+    file: pages/home.html
+    format: yaml-frontmatter
+    fields: &id001
+    - name: title
+      label: Title
+      widget: string
+    - name: description
+      label: Search description
+      widget: text
+      required: false
+      hint: Optional short description for search engines.
+    - name: description
+      label: Search description
+      widget: text
+      required: false
+      hint: Optional short description for search engines.
+    - name: layout
+      widget: hidden
+      default: page
+    - name: permalink
+      label: Page address
+      widget: string
+      hint: Keep the existing address to preserve links. Use a leading and trailing
+        slash, for example /my-page/.
+      pattern:
+      - ^/(?:[A-Za-z0-9_-]+/)*$
+      - Use / or a path such as /my-page/.
+    - name: body
+      label: Page content
+      widget: richtext
+      format: html
+      editor_components:
+      - image
+      - code-block
+      - table
+      - hr
+- name: pages
+  label: Pages
+  label_singular: Page
+  folder: pages
+  create: true
+  delete: false
+  extension: html
+  format: yaml-frontmatter
+  filter:
+    field: permalink
+    pattern: ^/.+
+  preview_path: '{{permalink}}'
+  fields: *id001

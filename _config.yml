@@ -1,0 +1,14 @@
+title: Homepage of Bruno Loff
+description: Research, publications, and university courses.
+url: https://brunoloff.github.io
+baseurl: ""
+lang: en
+encoding: utf-8
+strict_front_matter: true
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - docs
+  - admin/sveltia-cms.schema.json

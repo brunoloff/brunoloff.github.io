@@ -1,0 +1,43 @@
+---
+layout: page
+title: 01. StrongP vs StrongNC
+permalink: /selected-topics-in-computational-complexity/lecture-1/
+---
+<p><strong>Summary</strong></p>
+<ol>
+<li>P vs NC.</li>
+<li>Problems with numerical parameters. The MaxFlow problem.</li>
+<li>StrongP.
+<ol>
+<li>To each input-length <img alt="n" class="latex" src="/assets/uploads/imported/6b404e944fefabe1472b.png"/>, corresponds a program <img alt="P" class="latex" src="/assets/uploads/imported/cdfae6a030948134c021.png"/>, which is a list of <img alt="n^{O(1)}" class="latex" src="/assets/uploads/imported/f113293d80da968a3135.png"/> instructions.</li>
+<li>Each instruction of <img alt="P" class="latex" src="/assets/uploads/imported/cdfae6a030948134c021.png"/> is one of:
+<ol>
+<li><img alt="w := u \circ v" class="latex" src="/assets/uploads/imported/ae0251e7f20cdb45b958.png"/>, where <img alt="w" class="latex" src="/assets/uploads/imported/847b6456a28ee4218f89.png"/> denotes a memory location, <img alt="u" class="latex" src="/assets/uploads/imported/ade0997299394e2d5a78.png"/> and <img alt="v" class="latex" src="/assets/uploads/imported/f6785f2c1321a2ff9c60.png"/> denote either memory locations or constants, and <img alt="\circ \in \{+, -, \times\}" class="latex" src="/assets/uploads/imported/5ab7510927b9c341fc70.png"/>.</li>
+<li><strong>goto</strong> <img alt="\ell" class="latex" src="/assets/uploads/imported/c8e77eb0003df4baf636.png"/>, where <img alt="\ell" class="latex" src="/assets/uploads/imported/c8e77eb0003df4baf636.png"/> is some line in the program.</li>
+<li><strong>if </strong><img alt="u : 0" class="latex" src="/assets/uploads/imported/8a194b35649d8b9255df.png"/> <strong>goto </strong><img alt="\ell" class="latex" src="/assets/uploads/imported/c8e77eb0003df4baf636.png"/>, where <img alt="u" class="latex" src="/assets/uploads/imported/ade0997299394e2d5a78.png"/> is a memory location, <img alt=":" class="latex" src="/assets/uploads/imported/c6461c8f025c6765ad35.png"/> is one of <img alt="&lt;, \le" class="latex" src="/assets/uploads/imported/5eab355544630a43f169.png"/>, or <img alt="=" class="latex" src="/assets/uploads/imported/c20ef7dedf6d1cf07024.png"/>.</li>
+<li><img alt="u := \uparrow v" class="latex" src="/assets/uploads/imported/8c550f965195ea97ae37.png"/>: treats the value of memory location <img alt="v" class="latex" src="/assets/uploads/imported/f6785f2c1321a2ff9c60.png"/> as a pointer, and sets memory location <img alt="u" class="latex" src="/assets/uploads/imported/ade0997299394e2d5a78.png"/> to the value of the memory location pointed to by <img alt="v" class="latex" src="/assets/uploads/imported/f6785f2c1321a2ff9c60.png"/>. We ensure that the value of <img alt="v" class="latex" src="/assets/uploads/imported/f6785f2c1321a2ff9c60.png"/> does not depend on any numerical coordinate, by propagation of an <em>invalid-pointer</em> tag via instruction (i).</li>
+<li><strong>stop</strong>. The output value is the value of the first memory location.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm">Edmonds-Karp</a> is a StrongP algorithm for MaxFlow.</li>
+<li>Ketan’s Class <img alt="\mathrm{KC}(p, t)" class="latex" src="/assets/uploads/imported/188ca96053914bab14af.png"/>.</li>
+<li>StrongP is <img alt="\mathrm{KC}(\mathit{poly}(n),\mathit{poly}(n))" class="latex" src="/assets/uploads/imported/1d12aaef5a90061a3faa.png"/>.</li>
+<li>StrongNC would be defined analogously as <img alt="\mathrm{KC}(\mathit{poly}(n),\mathit{polylog}(n))" class="latex" src="/assets/uploads/imported/8713d90a0dd4d397a12b.png"/>.</li>
+<li><a href="/assets/uploads/2015/02/mulmuley.pdf">Mulmuley’s paper</a> shows that MaxFlow is not in <img alt="\mathrm{KC}(2^{o(\sqrt n)}, o(\sqrt n))" class="latex" src="/assets/uploads/imported/bd62a035b75cea5a6423.png"/> – Even if you only require the algorithm to be correct for capacities of bit-length <img alt="n^2" class="latex" src="/assets/uploads/imported/bdc21058276850a0c933.png"/>.</li>
+<li>In my opinion, this is the most interesting computational-complexity lower-bound that currently exists. I have truly lost all hope of coming up with a parallel algorithm for MaxFlow.</li>
+<li>In this class, we will show the same result for the restriction <img alt="\mathrm{KC}" class="latex" src="/assets/uploads/imported/91c9e846b6660a1d8b78.png"/> to linear operations (still interesting, Edmonds-Karp only uses linear operations).</li>
+<li>I.e., if we define linStrongP and linKC.</li>
+<li>We will show that MaxFlow is in linStrongP, but not in <img alt="\mathrm{linKC}(2^{o(\sqrt n)}, o(\sqrt n))" class="latex" src="/assets/uploads/imported/2894cb2042be72e0718e.png"/>.</li>
+<li>Let us start by showing that weighted shortest st-path is in <img alt="\mathrm{linKC}(\mathit{poly}(n), O(\log n))" class="latex" src="/assets/uploads/imported/a02322d59c932703aaa0.png"/>.
+<ol>
+<li>Let <img alt="\ell_k(a, b)" class="latex" src="/assets/uploads/imported/fc7a2f77474d1d43030a.png"/> denote the length of the shortest path between <img alt="a" class="latex" src="/assets/uploads/imported/f348be74cce51fbbba0e.png"/> and <img alt="b" class="latex" src="/assets/uploads/imported/71bfc11364cbb2e8753c.png"/>, among all paths of length at most <img alt="k" class="latex" src="/assets/uploads/imported/91feccea5f843a8decd5.png"/> (so <img alt="\ell_k(a, b) = \infty" class="latex" src="/assets/uploads/imported/e8d04b1ab82a73125d60.png"/> if no such path exists).</li>
+<li>The trick is to notice that <img alt="\ell_{2 k}(a, b) = \min_m \ell_k(a, m) + \ell_k(m, b)" class="latex" src="/assets/uploads/imported/adfd49dfb8ab1b277758.png"/>.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Potential project for those who need grading</strong></p>
+<ul>
+<li>Study and present the proof for the non-linear case. Milnor-Thom may be used as a black box, but <a href="https://en.wikipedia.org/wiki/Cylindrical_algebraic_decomposition">Collins’ cylindrical decomposition</a> must be learned and explained.</li>
+</ul>
