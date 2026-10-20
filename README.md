@@ -10,7 +10,7 @@ Everything required to serve the website and its editor is stored in this reposi
 1. Open `/admin/` and choose **Sign In Using Access Token**.
 2. Create a [fine-grained GitHub personal access token](https://github.com/settings/personal-access-tokens/new). Set the resource owner to **brunoloff**, choose **Only select repositories**, select **brunoloff.github.io**, and grant **Contents: Read and write** under repository permissions. Metadata read access is automatic. No workflow or pull request permission is needed for this setup.
 3. Copy the token into Sveltia's sign-in dialog. Do not put it in a repository file or commit it. Each browser remembers its own token; an expired or revoked token needs replacing.
-4. Choose **Homepage** to edit the front page, or **Pages** for publications, courses, and other pages. Use the rich text toolbar for formatting, images, tables, and links. HTML source mode is also available.
+4. Choose **Homepage** to edit the front page, or **Pages** for publications, courses, and other pages. Use the rich text toolbar for formatting, alignment, images, tables, and links. Expand a **Photo** or **Expandable section** block to edit its fields. HTML source mode is also available.
 5. Save/publish the entry. Saving commits it to `main` and GitHub Pages automatically rebuilds the site. Publication can take a few minutes; see the repository's Actions tab for the build result.
 
 New pages need a unique **Page address**, such as `/my-course/`. Add a link from the homepage or another page so readers can find them. Keep existing page addresses when editing to preserve links. Page deletion is disabled in the editor to prevent accidental loss.

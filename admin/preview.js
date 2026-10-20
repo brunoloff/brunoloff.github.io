@@ -10,7 +10,7 @@ const PagePreview = ({entry, getAsset}) => {
     // Preserve previews of new uploads; published images load from this site's own origin.
     image.src = asset?.url?.startsWith('blob:') ? asset.url : new URL(path, location.origin).href;
   }
-  return h('article', {},
+  return h('article', {className: entry.getIn(['data','permalink']) === '/' ? 'homepage' : ''},
     h('h1', {className: 'entry-title', 'data-key-path': 'title'}, entry.getIn(['data', 'title'])),
     h('div', {className: 'entry-content', 'data-key-path': 'body', dangerouslySetInnerHTML: {__html: template.innerHTML}})
   );

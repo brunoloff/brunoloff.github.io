@@ -27,3 +27,5 @@ This is a public-page import, not an authenticated WordPress export: it does not
 ## Editor self-hosting
 
 Sveltia CMS 0.249.0 is vendored with its distribution chunks, locales, UI fonts, syntax highlighter, and media-preview dependencies. Its bundle has narrow URL substitutions to use local copies of these resources and local version metadata. Reapply these substitutions when upgrading; otherwise the upstream bundle uses CDNs. This setup does not enable external stock media, translation, maps, or image-conversion integrations. GitHub API calls and GitHub's service-status check are expected network requests.
+
+The custom editor components in `admin/components.js` preserve WordPress photo wrappers and collapsible course notes in visual mode. Explicit paragraph alignment and theme selectors keep homepage formatting stable when rich text edits normalize the imported HTML. A browser-editor save of the homepage search description was persisted to GitHub successfully.

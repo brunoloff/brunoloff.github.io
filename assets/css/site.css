@@ -59,3 +59,12 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
 .site-navigation nav a:hover { color: #fff; text-decoration: underline; }
 .wp-block-image figure { margin-bottom: 0; }
 @media (max-width: 800px) { .site-navigation { top: auto; bottom: 18px; } .site-navigation[open] { bottom: 18px; } }
+
+/* Keep homepage presentation stable after rich text editor normalization. */
+.homepage .entry-content p:has(> a[href="/publications/"]) { text-align: center; font-size: 36px; line-height: 1.4; }
+.homepage .entry-content p:has(a[href="/hofga/"]) { text-align: center; font-size: 1.1em; }
+.homepage .entry-content h2:has(a[href$="/kaleidoscope26/"]) { text-align: center; }
+.entry-content img[src$="/fcul.png"] { width: 180px; }
+.entry-content img[src$="/lasige.jpg"] { width: 200px; }
+.entry-content img[src*="/assets/uploads/imported/"] { vertical-align: middle; }
+@media (max-width: 800px) { .homepage .entry-content p:has(> a[href="/publications/"]) { font-size: 28px; } }

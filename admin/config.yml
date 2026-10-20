@@ -48,6 +48,22 @@ collections:
       - hr
       - photo
       - details
+      buttons:
+      - bold
+      - italic
+      - strikethrough
+      - code
+      - link
+      - heading-one
+      - heading-two
+      - heading-three
+      - heading-four
+      - heading-five
+      - heading-six
+      - bulleted-list
+      - numbered-list
+      - quote
+      - align
 - name: pages
   label: Pages
   label_singular: Page
@@ -91,3 +107,19 @@ collections:
     - hr
     - photo
     - details
+    buttons:
+    - bold
+    - italic
+    - strikethrough
+    - code
+    - link
+    - heading-one
+    - heading-two
+    - heading-three
+    - heading-four
+    - heading-five
+    - heading-six
+    - bulleted-list
+    - numbered-list
+    - quote
+    - align
