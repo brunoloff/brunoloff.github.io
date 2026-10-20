@@ -46,6 +46,8 @@ collections:
       - code-block
       - table
       - hr
+      - photo
+      - details
 - name: pages
   label: Pages
   label_singular: Page
@@ -87,3 +89,5 @@ collections:
     - code-block
     - table
     - hr
+    - photo
+    - details
