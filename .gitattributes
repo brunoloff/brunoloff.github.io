@@ -1,0 +1,4 @@
+*.pdf binary
+*.woff2 binary
+*.ttf binary
+assets/vendor/** -diff

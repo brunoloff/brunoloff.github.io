@@ -1,6 +1,6 @@
 # Homepage of Bruno Loff
 
-Public website: https://brunoloff.github.io/  
+Public website: https://brunoloff.github.io/
 Browser editor: https://brunoloff.github.io/admin/
 
 Everything required to serve the website and its editor is stored in this repository. GitHub Pages builds and hosts it without an additional account or subscription. The WordPress site remains independent.
