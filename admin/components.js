@@ -1,7 +1,13 @@
 /* Preserve the WordPress photo blocks and expandable teaching notes in visual editing. */
 const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+const photoWidth = (value = 544) => {
+  const match = String(value).trim().match(/^([1-9]\d*)(px|%)?$/);
+  return match ? `${match[1]}${match[2] || 'px'}` : '544px';
+};
 const photoHTML = ({src = '', alt = '', link = '', width = 544, caption = ''} = {}) => {
-  const image = `<img src="${escapeHTML(src)}" alt="${escapeHTML(alt)}" width="${Number(width) || 544}" style="width:${Number(width) || 544}px;max-width:100%;height:auto">`;
+  const displayWidth = photoWidth(width);
+  const pixelWidth = displayWidth.endsWith('px') ? ` width="${displayWidth.slice(0, -2)}"` : '';
+  const image = `<img src="${escapeHTML(src)}" alt="${escapeHTML(alt)}"${pixelWidth} style="width:${displayWidth};max-width:100%;height:auto">`;
   return `<figure class="aligncenter">${link ? `<a href="${escapeHTML(link)}">${image}</a>` : image}${caption ? `<figcaption>${escapeHTML(caption)}</figcaption>` : ''}</figure>`;
 };
 CMS.registerEditorComponent({
@@ -10,7 +16,7 @@ CMS.registerEditorComponent({
     {name: 'src', label: 'Photo', widget: 'image'},
     {name: 'alt', label: 'Image description', widget: 'string', required: false},
     {name: 'link', label: 'Link', widget: 'string', required: false},
-    {name: 'width', label: 'Display width', widget: 'number', value_type: 'int', min: 1, default: 544},
+    {name: 'width', label: 'Display width', widget: 'string', default: '544', hint: 'Pixels (544 or 544px), or a percentage of the content width (100%).', pattern: ['^[1-9]\\d*(?:px|%)?$', 'Enter a positive pixel width or percentage, such as 544 or 100%.']},
     {name: 'caption', label: 'Caption', widget: 'string', required: false}
   ],
   pattern: /^<figure[^>]*>(?<body>[\s\S]*?)<\/figure>/m,
@@ -20,7 +26,7 @@ CMS.registerEditorComponent({
   fromBlockHTML: element => {
     const image = element.querySelector('img');
     if (!image) return undefined;
-    return {src: image.getAttribute('src') ?? '', alt: image.getAttribute('alt') ?? '', link: image.closest('a')?.getAttribute('href') ?? '', width: parseInt(image.style.width || image.getAttribute('width'), 10) || 544, caption: element.querySelector('figcaption')?.textContent ?? ''};
+    return {src: image.getAttribute('src') ?? '', alt: image.getAttribute('alt') ?? '', link: image.closest('a')?.getAttribute('href') ?? '', width: photoWidth(image.style.width || image.getAttribute('width') || 544).replace(/px$/, ''), caption: element.querySelector('figcaption')?.textContent ?? ''};
   },
   toBlockHTML: photoHTML,
   toPreview: photoHTML
