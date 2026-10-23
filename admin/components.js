@@ -45,3 +45,32 @@ CMS.registerEditorComponent({
   toBlockHTML: detailsHTML,
   toPreview: detailsHTML
 });
+
+// Only embed HTML graphics hosted among this website's own assets.
+const graphicPath = (src = '') => {
+  try {
+    const url = new URL(src, location.origin);
+    return url.origin === location.origin && /^\/assets\/.+\.html$/.test(url.pathname) ? url.pathname + url.search + url.hash : '';
+  } catch { return ''; }
+};
+const graphicHTML = ({src = '', title = 'Interactive graphic', height = 700} = {}) => {
+  const path = graphicPath(src);
+  if (!path) return '<p>Choose an HTML graphic under /assets/.</p>';
+  return `<iframe src="${escapeHTML(path)}" title="${escapeHTML(title)}" width="100%" height="${Math.max(300, Math.min(2000, Number(height) || 700))}" style="display:block;border:0"></iframe>`;
+};
+CMS.registerEditorComponent({
+  id: 'graphic', label: 'Interactive graphic', icon: 'monitoring', collapsed: true,
+  fields: [
+    {name: 'src', label: 'HTML file', widget: 'string', hint: 'For example /assets/ai-papers.html', pattern: ['^/assets/.+\\.html(?:[?#].*)?$', 'Use an HTML file under /assets/.']},
+    {name: 'title', label: 'Description', widget: 'string', default: 'Interactive graphic'},
+    {name: 'height', label: 'Height in pixels', widget: 'number', value_type: 'int', min: 300, max: 2000, default: 700}
+  ],
+  pattern: /^<iframe\b[^>]*>[\s\S]*?<\/iframe>/m,
+  toBlock: graphicHTML,
+  htmlSelector: 'iframe',
+  fromBlockHTML: element => graphicPath(element.getAttribute('src')) ? {
+    src: element.getAttribute('src'), title: element.getAttribute('title') || 'Interactive graphic', height: Number(element.getAttribute('height')) || 700
+  } : undefined,
+  toBlockHTML: graphicHTML,
+  toPreview: graphicHTML
+});

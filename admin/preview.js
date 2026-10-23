@@ -3,7 +3,12 @@ CMS.registerPreviewStyle('/assets/css/site.css');
 CMS.registerPreviewStyle('/admin/preview.css');
 const PagePreview = ({entry, getAsset}) => {
   const template = document.createElement('template');
-  template.innerHTML = DOMPurify.sanitize(entry.getIn(['data', 'body']) || '');
+  template.innerHTML = DOMPurify.sanitize(entry.getIn(['data', 'body']) || '', {ADD_TAGS: ['iframe'], FORBID_ATTR: ['srcdoc']});
+  for (const frame of template.content.querySelectorAll('iframe')) {
+    const path = graphicPath(frame.getAttribute('src'));
+    if (path) frame.src = new URL(path, location.origin).href;
+    else frame.remove();
+  }
   for (const image of template.content.querySelectorAll('img[src]')) {
     const path = image.getAttribute('src');
     const asset = getAsset(path);

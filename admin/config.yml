@@ -69,6 +69,7 @@ collections:
     - hr
     - photo
     - details
+    - graphic
     buttons:
     - bold
     - italic
@@ -144,6 +145,7 @@ collections:
     - hr
     - photo
     - details
+    - graphic
     buttons:
     - bold
     - italic
@@ -219,6 +221,7 @@ collections:
     - hr
     - photo
     - details
+    - graphic
     buttons:
     - bold
     - italic
@@ -294,6 +297,7 @@ collections:
     - hr
     - photo
     - details
+    - graphic
     buttons:
     - bold
     - italic
