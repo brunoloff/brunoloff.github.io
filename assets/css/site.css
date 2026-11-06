@@ -73,3 +73,14 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
 .entry-content img[src$="/lasige.jpg"] { width: 200px; }
 .entry-content img[src*="/assets/uploads/imported/"] { vertical-align: middle; }
 @media (max-width: 800px) { .homepage .entry-content p:has(> a[href="/publications/"]) { font-size: 28px; } }
+
+/* STOC report teaser: hover, focus, or tap to open the chart. */
+.stoc-feature { position: relative; margin: 1.8em 0; text-align: center; }
+.stoc-headline { display: block; width: 100%; border: 0; background: transparent; padding: 0; font: inherit; font-size: clamp(21px, 3.3vw, 30px); line-height: 1.4; -webkit-tap-highlight-color: transparent; color: #255f50; cursor: pointer; }
+.stoc-headline:hover { color: #174d40; }
+.stoc-headline:focus-visible { outline: 2px solid #2f806d; outline-offset: 6px; }
+.stoc-preview { display: none; position: absolute; z-index: 4; top: 100%; left: 50%; transform: translateX(-50%); width: min(900px, calc(100vw - 36px)); padding: 12px; background: #fff; border: 1px solid #dce8e3; border-radius: 8px; box-shadow: 0 10px 32px #0003; }
+.stoc-preview:focus-within, .stoc-headline[aria-expanded="true"] + .stoc-preview { display: block; }
+@media (hover: hover) { .stoc-feature:hover .stoc-preview { display: block; } }
+.stoc-preview img { display: block; width: 100%; height: auto; }
+.stoc-report-link { display: inline-block; margin-top: 8px; font: 14px/1.4 sans-serif; }
