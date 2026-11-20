@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RH Lean check</title>
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+  :root {
+    --ink: #333; --text: #444; --muted: #777; --faint: #999;
+    --rule: #e4e2dd; --cell: #e9e7e2; --bg: #fff;
+    --done: #596d88; --done-deep: #3e4d62; --fail: #b0503f; --ok: #3d7a57;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  body { color: var(--text); font: 300 16px/1.6 Merriweather, Georgia, 'Times New Roman', serif; }
+  .card { border: 1px solid var(--rule); border-radius: 6px; padding: 22px 24px 18px; }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  .kicker .live { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--done); margin-right: 7px; vertical-align: 1px; animation: pulse 2.4s ease-in-out infinite; }
+  .kicker .live.stale { background: var(--faint); animation: none; }
+  .kicker .live.ok { background: var(--ok); animation: none; }
+  .kicker .live.bad { background: var(--fail); animation: none; }
+  @keyframes pulse { 50% { opacity: .25; } }
+  .updated { font-size: 12px; color: var(--faint); }
+  h2 { font-weight: 300; font-size: 23px; line-height: 1.3; color: var(--ink); margin: 10px 0 16px; }
+  h2 a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: .15em; }
+  .hero { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+  .pct { font-size: 52px; line-height: 1; color: var(--ink); font-weight: 300; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .pct small { font-size: 24px; color: var(--muted); }
+  .hero-right { flex: 1; min-width: 0; }
+  .hero .steps { margin: 10px 0 0; }
+  .hero-text { font-size: 14px; color: var(--muted); padding-bottom: 4px; }
+  .hero-text b { font-weight: 400; color: var(--text); }
+  .steps { display: flex; gap: 0; margin: 0 0 18px; padding: 0; list-style: none; font-size: 12px; color: var(--faint); }
+  .steps li { flex: 1; position: relative; padding-top: 14px; }
+  .steps li::before { content: ""; position: absolute; top: 4px; left: 0; right: 0; height: 2px; background: var(--rule); }
+  .steps li::after { content: ""; position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--rule); }
+  .steps li.done { color: var(--muted); }
+  .steps li.done::before, .steps li.active::before { background: linear-gradient(90deg, var(--done) var(--p, 100%), var(--rule) var(--p, 100%)); }
+  .steps li.done::after { background: var(--done); border-color: var(--done); }
+  .steps li.active { color: var(--ink); }
+  .steps li.active::after { border-color: var(--done); }
+  .steps li.failed { color: var(--fail); }
+  .steps li.failed::after { border-color: var(--fail); background: var(--fail); }
+  /* 100 columns x 10 rows, filled column by column so each chapter is a vertical band */
+  .mosaic { display: grid; grid-template-columns: repeat(100, 1fr); grid-template-rows: repeat(10, auto); grid-auto-flow: column; gap: 1.5px; margin: 4px 0 18px; }
+  @media (max-width: 560px) { .mosaic { grid-template-columns: repeat(50, 1fr); grid-template-rows: repeat(20, auto); } }
+  .mosaic i { aspect-ratio: 1; border-radius: 1.5px; background: var(--cell); transition: background .6s, opacity .3s; }
+  .mosaic i.alt { background: #f2f0ec; }
+  .mosaic i.d { background: var(--done); }
+  .mosaic i.d.alt { background: #7488a3; }
+  .mosaic i.c { background: var(--done-deep); }
+  .mosaic i.c.alt { background: #52637b; }
+  .mosaic i.f, .mosaic i.f.alt { background: var(--fail); }
+  .mosaic.focus i { opacity: .22; }
+  .mosaic.focus i.on { opacity: 1; }
+  .chapters { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 6px 28px; margin: 0; padding: 0; list-style: none; }
+  .chapters li { font-size: 13px; padding: 4px 6px; margin: 0 -6px; border-radius: 4px; cursor: default; }
+  .chapters li:hover, .chapters li:focus { background: #f6f5f2; outline: none; }
+  .ch-head { display: flex; justify-content: space-between; gap: 8px; }
+  .ch-name { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ch-pct { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ch-pct.full { color: var(--done-deep); }
+  .ch-pct.bad { color: var(--fail); }
+  .bar { height: 4px; border-radius: 2px; background: var(--cell); overflow: hidden; margin: 3px 0 2px; }
+  .bar span { display: block; height: 100%; background: var(--done); transition: width .8s; }
+  .ch-sub { font-size: 11px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .verdict { margin: 0 0 16px; padding: 10px 14px; border-radius: 4px; font-size: 14px; background: #f3f6f4; color: var(--ok); border-left: 3px solid var(--ok); }
+  .verdict.bad { background: #faf3f1; color: var(--fail); border-left-color: var(--fail); }
+  .verdict.note { background: #f6f5f2; color: var(--muted); border-left-color: var(--faint); }
+  .foot { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--faint); line-height: 1.55; }
+  .foot a { color: inherit; }
+  [hidden] { display: none !important; }
+  @media (max-width: 560px) {
+    .card { padding: 16px 16px 14px; }
+    h2 { font-size: 19px; }
+    .pct { font-size: 40px; }
+    .chapters { grid-template-columns: minmax(0,1fr); }
+    .steps { font-size: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  /* ---- compact mode (?compact): a 4:3 card that replaces the homepage photo ---- */
+  body.compact .card { aspect-ratio: 4 / 3; display: flex; flex-direction: column; overflow: hidden; padding: 16px 20px 14px; }
+  body.compact h2 { font-size: 19px; margin: 6px 0 10px; }
+  body.compact h2 .full-only { display: none; }
+  body.compact .hero { margin-bottom: 10px; gap: 14px; flex-wrap: nowrap; align-items: center; }
+  body.compact .pct { font-size: 46px; }
+  body.compact .pct small { font-size: 20px; }
+  body.compact .hero-text { font-size: 12.5px; line-height: 1.5; padding: 0; flex: 1; min-width: 0; }
+  body.compact .hero .steps { margin: 6px 0 0; font-size: 10.5px; }
+  body.compact .verdict { margin: 0 0 8px; padding: 5px 10px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: none; }
+  body.compact .mosaic { flex: 1 1 auto; min-height: 0; margin: 0 0 10px; align-content: center; justify-content: center; }
+  body.compact .mosaic i { aspect-ratio: auto; }
+  body.compact .chapters { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px 16px; flex: none; }
+  body.compact .chapters li { font-size: 11.5px; padding: 2px 5px; margin: 0 -5px; }
+  body.compact .bar { height: 3px; margin: 2px 0 1px; }
+  body.compact .ch-sub, body.compact .foot { display: none; }
+  @media (max-width: 560px) {
+    body.compact .card { aspect-ratio: auto; }
+    body.compact .mosaic { flex: none; aspect-ratio: 4 / 3; }
+    body.compact .chapters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    body.compact .hero { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<section class="card" aria-live="polite">
+  <div class="top">
+    <div class="kicker"><span class="live" id="dot"></span><span id="kicker">Live · independent check</span></div>
+    <div class="updated" id="updated">loading…</div>
+  </div>
+  <h2 id="title">Machine-checking the <a id="title-link" href="https://alpo.ge/remark.pdf" target="_blank" rel="noopener">claimed Lean proof</a> of the Riemann Hypothesis</h2>
+
+  <div class="hero">
+    <div class="pct" id="pct">–<small>%</small></div>
+    <div class="hero-right">
+      <div class="hero-text" id="hero">of the formalization compiled</div>
+      <ol class="steps" id="steps">
+        <li data-p="cache">Mathlib</li>
+        <li data-p="build">Compile</li>
+        <li data-p="axioms">Axioms</li>
+        <li data-p="done">Verdict</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="verdict" id="verdict" hidden></div>
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <ul class="chapters" id="chapters"></ul>
+
+  <div class="foot" id="foot">
+    Each square is 0.1% of the 17.4 million lines of Lean, grouped by chapter; it fills in as the files compile.
+    The build runs the claimed proof through Lean’s kernel on a cloud machine and publishes progress every 5 minutes.
+    A finished build only means something together with the axiom check: the main theorem must rely on nothing beyond Lean’s three standard axioms.
+  </div>
+</section>
+
+<script>
+(function () {
+  var DEFAULT = 'https://raw.githubusercontent.com/brunoloff/rh-lean-progress/main/progress.json';
+  var q = new URLSearchParams(location.search);
+  var URL_ = q.get('data') || DEFAULT;
+  var CELLS = 1000;
+  var COMPACT = q.has('compact');
+  if (COMPACT) {
+    document.body.classList.add('compact');
+    var tl = document.getElementById('title-link');
+    // in the compact card the whole title opens the full view
+    document.getElementById('title').innerHTML = '';
+    var a = document.createElement('a');
+    a.href = 'rh-progress.html' + (q.get('data') ? '?data=' + encodeURIComponent(q.get('data')) : '');
+    a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = 'Checking the claimed Lean proof of the Riemann Hypothesis';
+    document.getElementById('title').appendChild(a);
+  }
+  var $ = function (id) { return document.getElementById(id); };
+  var nf = new Intl.NumberFormat('en');
+  var focused = null;
+
+  function fmtLines(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + ' million' : nf.format(n); }
+  function ago(sec) {
+    if (sec < 90) return 'just now';
+    var m = Math.round(sec / 60);
+    if (m < 90) return m + ' min ago';
+    var h = Math.round(m / 60);
+    return h < 48 ? h + ' h ago' : Math.round(h / 24) + ' days ago';
+  }
+  function when(ts) {
+    return new Date(ts * 1000).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function num(x) { return typeof x === 'number' && isFinite(x) ? x : 0; }
+
+  // cell allocation: proportional to lines, at least one cell per chapter
+  function allocate(chs) {
+    var total = chs.reduce(function (s, c) { return s + num(c.lines); }, 0) || 1;
+    var raw = chs.map(function (c) { return Math.max(1, num(c.lines) / total * CELLS); });
+    var n = raw.map(Math.floor), left = CELLS - n.reduce(function (a, b) { return a + b; }, 0);
+    raw.map(function (r, i) { return [r - Math.floor(r), i]; }).sort(function (a, b) { return b[0] - a[0]; })
+       .forEach(function (p) { if (left > 0) { n[p[1]]++; left--; } });
+    return n;
+  }
+
+  function render(d) {
+    var now = Date.now() / 1000;
+    var T = d.totals || {};
+    var frac = num(T.lines) ? num(T.lines_done) / num(T.lines) : 0;
+    var pct = frac * 100;
+    $('pct').firstChild.nodeValue = pct >= 99.95 && frac < 1 ? '99.9' : pct.toFixed(pct < 10 ? 2 : 1);
+
+    var phase = String(d.phase || 'setup');
+    var stale = phase !== 'done' && phase !== 'failed' && now - num(d.updated) > 20 * 60;
+    var failedN = num(d.failed && d.failed.count);
+
+    // hero text
+    var hero = $('hero'); hero.textContent = '';
+    hero.appendChild(el('span', null, 'of ' + fmtLines(num(T.lines)) + ' lines compiled'));
+    hero.appendChild(el('br'));
+    var sub = nf.format(num(T.files_done)) + ' / ' + nf.format(num(T.files)) + ' files';
+    if (phase === 'build' && d.eta && !stale) sub += ' · done around ' + when(d.eta);
+    if (d.rate_lines_per_hour && phase === 'build' && !stale) sub += ' · ' + fmtLines(d.rate_lines_per_hour) + ' lines/h';
+    hero.appendChild(el('b', null, sub));
+
+    // status line
+    var dot = $('dot'); dot.className = 'live';
+    var kick = 'Live · independent check';
+    if (phase === 'setup') { kick = 'Waiting to start'; dot.className = 'live stale'; }
+    if (stale) { kick = 'Paused · machine not reporting'; dot.className = 'live stale'; }
+    if (phase === 'failed') { kick = 'Stopped with errors'; dot.className = 'live bad'; }
+    $('kicker').textContent = kick;
+    $('updated').textContent = d.updated ? 'updated ' + ago(now - d.updated) : '';
+
+    // stepper
+    var order = ['setup', 'cache', 'build', 'axioms', 'replay', 'done'];
+    var at = order.indexOf(phase);
+    var failedAt = phase === 'failed' ? (d.phase_detail || '').match(/axiom/i) ? 'axioms' : (d.phase_detail || '').match(/cache/i) ? 'cache' : 'build' : null;
+    Array.prototype.forEach.call($('steps').children, function (li) {
+      var p = li.getAttribute('data-p'), i = order.indexOf(p);
+      li.className = ''; li.style.removeProperty('--p');
+      if (failedAt) {
+        var fi = order.indexOf(failedAt);
+        li.className = i < fi ? 'done' : i === fi ? 'failed' : '';
+      } else if (phase === 'done' || i < at) li.className = 'done';
+      else if (i === at || (p === 'axioms' && phase === 'replay')) {
+        li.className = 'active';
+        if (p === 'build') li.style.setProperty('--p', pct.toFixed(1) + '%');
+      }
+    });
+
+    // verdict
+    var v = $('verdict'); v.hidden = true; v.className = 'verdict'; v.textContent = '';
+    var ax = d.axioms;
+    if (phase === 'done' && ax && ax.ok && !failedN) {
+      v.hidden = false;
+      v.textContent = 'Lean’s kernel accepted the whole formalization, and the main theorems use only the standard axioms (propext, Classical.choice, Quot.sound).';
+    } else if (ax && !ax.ok) {
+      v.hidden = false; v.className = 'verdict bad';
+      var extra = Array.isArray(ax.unexpected) && ax.unexpected.length ? ax.unexpected.slice(0, 6).map(String).join(', ') : 'unreadable output';
+      v.textContent = 'Axiom check: the main theorems depend on unexpected axioms: ' + extra + '.';
+    } else if (failedN) {
+      v.hidden = false; v.className = 'verdict bad';
+      var first = (d.failed.first || []).slice(0, 3).map(function (m) { return String(m).split('/').pop(); }).join(', ');
+      v.textContent = nf.format(failedN) + (failedN === 1 ? ' file has' : ' files have') + ' failed to compile so far' + (first ? ' (' + first + (failedN > 3 ? ', …' : '') + ')' : '') + '.';
+    } else if (phase === 'setup') {
+      v.hidden = false; v.className = 'verdict note';
+      v.textContent = 'The machine is ready; the build has not started yet.';
+    }
+
+    // mosaic + chapter list
+    var chs = Array.isArray(d.chapters) ? d.chapters : [];
+    var alloc = allocate(chs), mosaic = $('mosaic'), list = $('chapters');
+    mosaic.textContent = ''; list.textContent = '';
+    chs.forEach(function (c, k) {
+      var f = num(c.lines) ? num(c.lines_done) / num(c.lines) : 0;
+      var fill = Math.round(f * alloc[k]);
+      if (f > 0 && fill === 0) fill = 1;
+      var full = num(c.files) && num(c.files_done) === num(c.files);
+      // fill from the bottom of each column upward reads as "rising"; we keep DOM order
+      // (column-major) and let the first cells in the band be the filled ones.
+      for (var j = 0; j < alloc[k]; j++) {
+        var cell = el('i', (j < fill ? (full ? 'c' : 'd') : '') + (k % 2 ? ' alt' : ''));
+        if (num(c.failed) && j === alloc[k] - 1) cell.className = 'f';
+        cell.setAttribute('data-ch', String(c.id));
+        cell.title = String(c.title || c.id);
+        mosaic.appendChild(cell);
+      }
+      var li = el('li'); li.tabIndex = 0; li.setAttribute('data-ch', String(c.id)); li.title = String(c.title || c.id);
+      var head = el('div', 'ch-head');
+      head.appendChild(el('span', 'ch-name', String(c.title || c.id)));
+      var p = el('span', 'ch-pct' + (num(c.failed) ? ' bad' : full ? ' full' : ''),
+        num(c.failed) ? num(c.failed) + ' failed' : full ? '✓ done' : (f * 100).toFixed(f > 0 && f < .1 ? 1 : 0) + '%');
+      head.appendChild(p);
+      li.appendChild(head);
+      var bar = el('div', 'bar'), s = el('span'); s.style.width = (f * 100).toFixed(2) + '%'; bar.appendChild(s); li.appendChild(bar);
+      li.appendChild(el('div', 'ch-sub', nf.format(num(c.files)) + ' files · ' + fmtLines(num(c.lines)) + ' lines · ' + String(c.blurb || '')));
+      li.addEventListener('mouseenter', function () { focus(c.id); });
+      li.addEventListener('focus', function () { focus(c.id); });
+      li.addEventListener('mouseleave', function () { focus(null); });
+      li.addEventListener('blur', function () { focus(null); });
+      list.appendChild(li);
+    });
+    if (focused) focus(focused);
+    layoutMosaic();
+    resize();
+  }
+
+  function focus(id) {
+    focused = id;
+    var m = $('mosaic');
+    m.classList.toggle('focus', !!id);
+    Array.prototype.forEach.call(m.children, function (c) { c.classList.toggle('on', c.getAttribute('data-ch') === String(id)); });
+  }
+
+  // compact mode: choose rows/cols so the 1000 squares are as large as the free space allows
+  function layoutMosaic() {
+    if (!COMPACT) return;
+    var m = $('mosaic'), n = m.children.length; if (!n) return;
+    m.style.gridTemplateColumns = m.style.gridTemplateRows = '';
+    var W = m.clientWidth, H = m.clientHeight, g = 2, best = null;
+    for (var r = 4; r <= 60; r++) {
+      var c = Math.ceil(n / r);
+      var sz = Math.min((W - (c - 1) * g) / c, (H - (r - 1) * g) / r);
+      if (!best || sz > best.s) best = { r: r, c: c, s: sz };
+    }
+    var s = Math.max(2, Math.floor(best.s * 10) / 10);
+    m.style.gap = g + 'px';
+    m.style.gridTemplateColumns = 'repeat(' + best.c + ',' + s + 'px)';
+    m.style.gridTemplateRows = 'repeat(' + best.r + ',' + s + 'px)';
+  }
+
+  function resize() {
+    if (window.parent !== window) window.parent.postMessage({ type: 'rh-progress-height', height: document.documentElement.scrollHeight }, '*');
+  }
+
+  function waiting(msg) {
+    $('updated').textContent = msg;
+    $('kicker').textContent = 'Waiting for the first report';
+    $('dot').className = 'live stale';
+    resize();
+  }
+
+  var last = null;
+  function load() {
+    fetch(URL_ + (URL_.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { last = d; render(d); })
+      .catch(function () { if (last) render(last); else waiting('no data yet'); });
+  }
+  $('mosaic').addEventListener('mouseover', function (e) { var c = e.target.getAttribute && e.target.getAttribute('data-ch'); if (c) { focus(c); hl(c); } });
+  $('mosaic').addEventListener('mouseleave', function () { focus(null); hl(null); });
+  function hl(id) { Array.prototype.forEach.call($('chapters').children, function (li) { li.style.background = li.getAttribute('data-ch') === id ? '#f6f5f2' : ''; }); }
+  load();
+  setInterval(load, 5 * 60 * 1000);
+  setInterval(function () { if (last) render(last); }, 60 * 1000); // keep "x min ago" fresh
+  window.addEventListener('resize', function () { layoutMosaic(); resize(); });
+})();
+</script>
+</body>
+</html>
