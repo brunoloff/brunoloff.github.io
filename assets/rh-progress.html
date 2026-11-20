@@ -60,7 +60,7 @@
   .chapters li:hover, .chapters li:focus { background: #f6f5f2; outline: none; }
   .ch-head { display: flex; justify-content: space-between; gap: 8px; }
   .ch-name { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ch-pct { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ch-pct { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; flex: none; }
   .ch-pct.full { color: var(--done-deep); }
   .ch-pct.bad { color: var(--fail); }
   .bar { height: 4px; border-radius: 2px; background: var(--cell); overflow: hidden; margin: 3px 0 2px; }
@@ -90,7 +90,7 @@
   body.compact .pct small { font-size: 20px; }
   body.compact .hero-text { font-size: 12.5px; line-height: 1.5; padding: 0; flex: 1; min-width: 0; }
   body.compact .hero .steps { margin: 6px 0 0; font-size: 10.5px; }
-  body.compact .verdict { margin: 0 0 8px; padding: 5px 10px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: none; }
+  body.compact .verdict { margin: 0 0 8px; padding: 5px 10px; font-size: 12px; line-height: 1.45; flex: none; }
   body.compact .mosaic { flex: 1 1 auto; min-height: 0; margin: 0 0 10px; align-content: center; justify-content: center; }
   body.compact .mosaic i { aspect-ratio: auto; }
   body.compact .chapters { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px 16px; flex: none; }
@@ -121,6 +121,7 @@
         <li data-p="cache">Mathlib</li>
         <li data-p="build">Compile</li>
         <li data-p="axioms">Axioms</li>
+        <li data-p="replay">Replay</li>
         <li data-p="done">Verdict</li>
       </ol>
     </div>
@@ -133,7 +134,7 @@
   <div class="foot" id="foot">
     Each square is 0.1% of the 17.4 million lines of Lean, grouped by chapter; it fills in as the files compile.
     The build runs the claimed proof through Lean’s kernel on a cloud machine and publishes progress every 5 minutes.
-    A finished build only means something together with the axiom check: the main theorem must rely on nothing beyond Lean’s three standard axioms.
+    A finished build only means something together with the last two steps: the main theorems must rely on nothing beyond Lean’s three standard axioms, and a kernel replay re-checks every compiled declaration to rule out metaprogramming tricks. This uses Lean’s own kernel; it does not rule out a bug in that kernel.
   </div>
 </section>
 
@@ -201,6 +202,7 @@
     var sub = nf.format(num(T.files_done)) + ' / ' + nf.format(num(T.files)) + ' files';
     if (phase === 'build' && d.eta && !stale) sub += ' · done around ' + when(d.eta);
     if (d.rate_lines_per_hour && phase === 'build' && !stale) sub += ' · ' + fmtLines(d.rate_lines_per_hour) + ' lines/h';
+    if ((phase === 'axioms' || phase === 'replay') && d.phase_detail) sub += ' · ' + String(d.phase_detail).slice(0, 80);
     hero.appendChild(el('b', null, sub));
 
     // status line
@@ -209,13 +211,18 @@
     if (phase === 'setup') { kick = 'Waiting to start'; dot.className = 'live stale'; }
     if (stale) { kick = 'Paused · machine not reporting'; dot.className = 'live stale'; }
     if (phase === 'failed') { kick = 'Stopped with errors'; dot.className = 'live bad'; }
+    if (phase === 'done') {
+      var good = d.axioms && d.axioms.ok && !failedN && d.replay === 'passed';
+      kick = 'Finished · machine shut down'; dot.className = 'live ' + (good ? 'ok' : 'bad');
+    }
     $('kicker').textContent = kick;
     $('updated').textContent = d.updated ? 'updated ' + ago(now - d.updated) : '';
 
     // stepper
     var order = ['setup', 'cache', 'build', 'axioms', 'replay', 'done'];
     var at = order.indexOf(phase);
-    var failedAt = phase === 'failed' ? (d.phase_detail || '').match(/axiom/i) ? 'axioms' : (d.phase_detail || '').match(/cache/i) ? 'cache' : 'build' : null;
+    var det = String(d.phase_detail || '');
+    var failedAt = phase === 'failed' ? (/replay/i.test(det) ? 'replay' : /axiom/i.test(det) ? 'axioms' : /cache/i.test(det) ? 'cache' : 'build') : null;
     Array.prototype.forEach.call($('steps').children, function (li) {
       var p = li.getAttribute('data-p'), i = order.indexOf(p);
       li.className = ''; li.style.removeProperty('--p');
@@ -223,7 +230,7 @@
         var fi = order.indexOf(failedAt);
         li.className = i < fi ? 'done' : i === fi ? 'failed' : '';
       } else if (phase === 'done' || i < at) li.className = 'done';
-      else if (i === at || (p === 'axioms' && phase === 'replay')) {
+      else if (i === at) {
         li.className = 'active';
         if (p === 'build') li.style.setProperty('--p', pct.toFixed(1) + '%');
       }
@@ -232,13 +239,16 @@
     // verdict
     var v = $('verdict'); v.hidden = true; v.className = 'verdict'; v.textContent = '';
     var ax = d.axioms;
-    if (phase === 'done' && ax && ax.ok && !failedN) {
+    if (phase === 'done' && ax && ax.ok && !failedN && d.replay === 'passed') {
       v.hidden = false;
-      v.textContent = 'Lean’s kernel accepted the whole formalization, and the main theorems use only the standard axioms (propext, Classical.choice, Quot.sound).';
+      v.textContent = 'Lean’s kernel accepted the whole formalization, a full kernel replay re-checked every declaration, and the main theorems use only the standard axioms (propext, Classical.choice, Quot.sound).';
     } else if (ax && !ax.ok) {
       v.hidden = false; v.className = 'verdict bad';
       var extra = Array.isArray(ax.unexpected) && ax.unexpected.length ? ax.unexpected.slice(0, 6).map(String).join(', ') : 'unreadable output';
       v.textContent = 'Axiom check: the main theorems depend on unexpected axioms: ' + extra + '.';
+    } else if (d.replay && d.replay !== 'passed') {
+      v.hidden = false; v.className = 'verdict bad';
+      v.textContent = 'Kernel replay: ' + String(d.replay).slice(0, 120) + '.';
     } else if (failedN) {
       v.hidden = false; v.className = 'verdict bad';
       var first = (d.failed.first || []).slice(0, 3).map(function (m) { return String(m).split('/').pop(); }).join(', ');
