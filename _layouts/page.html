@@ -45,6 +45,7 @@
     </a>
   </nav>
   <script src="{{ '/assets/js/page-tools.js' | relative_url }}" defer></script>
+  {% if page.url == '/publications/' %}<script src="{{ '/assets/js/publications-extension.js' | relative_url }}" defer></script>{% endif %}
   <script data-goatcounter="https://brunoloff.goatcounter.com/count"
           async src="https://gc.zgo.at/count.js"></script>
 </body>
