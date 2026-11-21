@@ -89,7 +89,7 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
 @media (max-width: 800px) { .arxiv-preview { position: static; transform: none; width: 100%; margin-top: 8px; } }
 
 .publication-art { position: relative; }
-.publication-art-extension { position: absolute; left: 93.36283186%; top: 0; width: 47.23451327%; height: auto; max-width: none; opacity: 1; pointer-events: none; transition: opacity 5s linear; }
+.publication-art-extension { position: absolute; left: 93.36283186%; top: 0; width: 47.23451327%; height: auto; max-width: none; opacity: 1; pointer-events: none; transition: opacity .5s linear; }
 .publication-art-extension.is-faded { opacity: 0; }
 .publication-art-extension.is-visible { opacity: 1; transition-duration: .25s; }
 @media (prefers-reduced-motion: reduce) { .publication-art-extension { transition-duration: .01ms; } }

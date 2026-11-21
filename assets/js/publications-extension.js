@@ -8,7 +8,7 @@
   extension.alt = '';
   extension.className = 'publication-art-extension';
   figure.append(extension);
-  requestAnimationFrame(() => requestAnimationFrame(() => extension.classList.add('is-faded')));
+  setTimeout(() => extension.classList.add('is-faded'), 3000);
   figure.addEventListener('pointerenter', event => {
     if (event.pointerType === 'mouse' || event.pointerType === 'pen') extension.classList.add('is-visible');
   });
@@ -25,6 +25,6 @@
     touchTap = true;
     clearTimeout(timer);
     extension.classList.add('is-visible');
-    timer = setTimeout(() => extension.classList.remove('is-visible'), 1000);
+    timer = setTimeout(() => extension.classList.remove('is-visible'), 3000);
   });
 })();
