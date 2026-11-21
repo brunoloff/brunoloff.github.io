@@ -4,7 +4,7 @@
   if (!figure) return;
   figure.classList.add('publication-art');
   const extension = document.createElement('img');
-  extension.src = '/assets/uploads/2026/04/publications-extension.png';
+  extension.src = '/assets/uploads/2026/04/publications-extension-blended.png';
   extension.alt = '';
   extension.className = 'publication-art-extension';
   figure.append(extension);
