@@ -16,9 +16,13 @@
     if (event.pointerType === 'mouse' || event.pointerType === 'pen') extension.classList.remove('is-visible');
   });
   let timer;
+  let touchTap = false;
+  figure.addEventListener('click', event => {
+    if (touchTap) { event.preventDefault(); touchTap = false; }
+  });
   figure.addEventListener('pointerup', event => {
     if (event.pointerType !== 'touch') return;
-    event.preventDefault();
+    touchTap = true;
     clearTimeout(timer);
     extension.classList.add('is-visible');
     timer = setTimeout(() => extension.classList.remove('is-visible'), 1000);
