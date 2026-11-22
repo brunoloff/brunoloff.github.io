@@ -93,3 +93,23 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
 .publication-art-extension.is-faded { opacity: 0; }
 .publication-art-extension.is-visible { opacity: 1; transition-duration: .25s; }
 @media (prefers-reduced-motion: reduce) { .publication-art-extension { transition-duration: .01ms; } }
+
+/* Front-page tabs: photo, "New Reality" list (default), live RH check widget. */
+.home-tabs { margin: 0 0 24px; }
+.home-tablist { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+.home-tab { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 10px 14px; font: inherit; font-size: 15px; line-height: 1.35; color: #777; cursor: pointer; text-align: left; }
+.home-tab:hover { color: #111; }
+.home-tab[aria-selected="true"] { color: #2f4a6e; border-bottom-color: #2f4a6e; font-weight: 400; }
+.home-tab:focus-visible { outline: 2px solid #596d88; outline-offset: 2px; }
+/* Panels share one grid cell, so the block keeps the tallest panel's height and the widget keeps measuring itself while hidden. */
+.home-panels { display: grid; }
+.home-panel { grid-area: 1 / 1; min-width: 0; visibility: hidden; }
+.home-panel.is-active { visibility: visible; }
+.home-panel figure { margin: 0; }
+.reality-list { list-style: none; counter-reset: pt; margin: 0; padding: 0; }
+.reality-list li { counter-increment: pt; display: grid; grid-template-columns: 2em 1fr; gap: 8px; padding: 9px 0; border-top: 1px solid #e3e3e3; }
+.reality-list li:last-child { border-bottom: 1px solid #e3e3e3; }
+.reality-list li::before { content: counter(pt); font: 14px/1.9 monospace; color: #999; font-variant-numeric: tabular-nums; }
+.reality-list li.key { font-weight: 700; color: #333; }
+.reality-list li.key::before { color: #2f4a6e; }
+@media (max-width: 800px) { .home-tab { font-size: 14px; padding: 8px 10px; } .reality-list li { padding: 7px 0; } }

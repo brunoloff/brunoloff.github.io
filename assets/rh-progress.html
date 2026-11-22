@@ -346,7 +346,7 @@
   }
 
   function resize() {
-    if (window.parent !== window) window.parent.postMessage({ type: 'rh-progress-height', height: document.documentElement.scrollHeight }, '*');
+    if (window.parent !== window) window.parent.postMessage({ type: 'rh-progress-height', height: Math.ceil(document.body.getBoundingClientRect().height) }, '*');
   }
 
   function waiting(msg) {
