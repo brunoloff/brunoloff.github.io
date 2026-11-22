@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Build Sveltia CMS from the brunoloff/sveltia-cms fork and bundle it into assets/vendor/sveltia.
+# Build Sveltia CMS from the brunoloff/sveltia-cms fork and bundle it, with the HTML editor field
+# type from ../sveltia-html-editor, into assets/vendor/sveltia.
 #
 # Usage: scripts/sync-sveltia.sh [path-to-fork-checkout]
 #   Default fork path: ../sveltia-cms (next to this repository). The fork's checked-out branch
@@ -28,7 +29,13 @@ echo "==> Building the fork ($(git -C "$fork" rev-parse --abbrev-ref HEAD) @ $(g
 (cd "$fork" && "${pnpm_cmd[@]}" install --frozen-lockfile && "${pnpm_cmd[@]}" build)
 
 echo "==> Bundling it for the website"
-(cd "$site/cms" && rm -rf node_modules/@sveltia/cms && npm install --install-links --no-audit --no-fund && npm run build)
+(cd "$site/cms" && rm -rf node_modules/@sveltia/cms node_modules/sveltia-html-editor && npm install --install-links --no-audit --no-fund @sveltia/cms@file:../../sveltia-cms/package sveltia-html-editor@file:../../sveltia-html-editor && npm run build)
+
+echo "==> Stamping the bundle version into admin/index.html"
+# The entry file keeps its name between builds; a version query makes browsers fetch the new one
+# instead of a cached copy that points at chunks which no longer exist.
+stamp="$(sha256sum "$site/assets/vendor/sveltia/sveltia-cms.js" | cut -c1-10)"
+sed -i -E "s#/assets/vendor/sveltia/sveltia-cms\.js(\?v=[0-9a-f]+)?'#/assets/vendor/sveltia/sveltia-cms.js?v=$stamp'#" "$site/admin/index.html"
 
 echo "==> Copying the license, schema and version record"
 cp "$fork/LICENSE.txt" "$site/assets/vendor/sveltia/LICENSE.txt"
@@ -39,6 +46,7 @@ Fork: https://github.com/brunoloff/sveltia-cms
 Branch: $(git -C "$fork" rev-parse --abbrev-ref HEAD)
 Commit: $(git -C "$fork" rev-parse HEAD)
 Upstream base: $(git -C "$fork" describe --tags --abbrev=0 2>/dev/null || echo unknown)
+HTML editor: $(git -C "$site/../sveltia-html-editor" rev-parse HEAD 2>/dev/null || echo uncommitted)
 EOF
 
 echo "==> Done: $(du -sh "$site/assets/vendor/sveltia" | cut -f1) in assets/vendor/sveltia"

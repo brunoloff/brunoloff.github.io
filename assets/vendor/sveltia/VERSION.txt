@@ -3,3 +3,4 @@ Fork: https://github.com/brunoloff/sveltia-cms
 Branch: brunoloff
 Commit: 5efd72862745bc12ddaea388cfc87781b0d95cf4
 Upstream base: v0.270.1
+HTML editor: 96abb3678c2261fa3dfbb13ba91107b40a20c731

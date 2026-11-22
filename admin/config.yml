@@ -60,32 +60,7 @@ collections:
     - Use / or a path such as /my-page/.
   - name: body
     label: Page content
-    widget: richtext
-    format: html
-    editor_components:
-    - image
-    - code-block
-    - table
-    - hr
-    - photo
-    - details
-    - graphic
-    buttons:
-    - bold
-    - italic
-    - strikethrough
-    - code
-    - link
-    - heading-one
-    - heading-two
-    - heading-three
-    - heading-four
-    - heading-five
-    - heading-six
-    - bulleted-list
-    - numbered-list
-    - quote
-    - align
+    widget: html-editor
 - name: courses
   label: Courses
   label_singular: Page
@@ -136,32 +111,7 @@ collections:
     - Use / or a path such as /my-page/.
   - name: body
     label: Page content
-    widget: richtext
-    format: html
-    editor_components:
-    - image
-    - code-block
-    - table
-    - hr
-    - photo
-    - details
-    - graphic
-    buttons:
-    - bold
-    - italic
-    - strikethrough
-    - code
-    - link
-    - heading-one
-    - heading-two
-    - heading-three
-    - heading-four
-    - heading-five
-    - heading-six
-    - bulleted-list
-    - numbered-list
-    - quote
-    - align
+    widget: html-editor
 - name: research
   label: Research
   label_singular: Page
@@ -212,32 +162,7 @@ collections:
     - Use / or a path such as /my-page/.
   - name: body
     label: Page content
-    widget: richtext
-    format: html
-    editor_components:
-    - image
-    - code-block
-    - table
-    - hr
-    - photo
-    - details
-    - graphic
-    buttons:
-    - bold
-    - italic
-    - strikethrough
-    - code
-    - link
-    - heading-one
-    - heading-two
-    - heading-three
-    - heading-four
-    - heading-five
-    - heading-six
-    - bulleted-list
-    - numbered-list
-    - quote
-    - align
+    widget: html-editor
 - name: archive
   label: Archive
   label_singular: Page
@@ -288,29 +213,4 @@ collections:
     - Use / or a path such as /my-page/.
   - name: body
     label: Page content
-    widget: richtext
-    format: html
-    editor_components:
-    - image
-    - code-block
-    - table
-    - hr
-    - photo
-    - details
-    - graphic
-    buttons:
-    - bold
-    - italic
-    - strikethrough
-    - code
-    - link
-    - heading-one
-    - heading-two
-    - heading-three
-    - heading-four
-    - heading-five
-    - heading-six
-    - bulleted-list
-    - numbered-list
-    - quote
-    - align
+    widget: html-editor

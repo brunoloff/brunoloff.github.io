@@ -13,7 +13,14 @@
     // Sveltia CMS built from the brunoloff/sveltia-cms fork (see scripts/sync-sveltia.sh).
     // Importing it sets window.CMS, h, DOMPurify, etc.; the site's scripts then register their
     // components and previews before the CMS starts.
-    import CMS from '/assets/vendor/sveltia/sveltia-cms.js';
+    import CMS, { registerHtmlEditor } from '/assets/vendor/sveltia/sveltia-cms.js?v=76f19ceee9';
+    // Page bodies are edited in place, styled like the published page (widget: html-editor).
+    registerHtmlEditor(CMS, {
+      stylesheets: ['/assets/css/fonts.css', '/assets/css/site.css'],
+      wrapper: '<article><div class="entry-content">{content}</div></article>',
+      bodyClass: (entry) => (entry?.getIn(['data', 'permalink']) === '/' ? 'homepage' : ''),
+      extraCss: '.hte-page { max-width: 760px; margin: 0 auto; padding-inline: 32px; }',
+    });
     const load = (src) => new Promise((resolve, reject) => {
       const script = Object.assign(document.createElement('script'), { src, onload: resolve, onerror: reject });
       document.head.append(script);
