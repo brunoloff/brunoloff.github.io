@@ -24,7 +24,9 @@ Upload images and PDFs through the media library. They are stored in `assets/upl
 - `assets/css/`: theme and locally hosted Merriweather font declarations.
 - `assets/uploads/`: migrated and newly uploaded media/documents, including static equation images.
 - `admin/config.yml`: Sveltia's page collections, media storage, and token-only GitHub backend.
-- `assets/vendor/`: fixed Sveltia CMS bundle, version, and MIT license.
+- `assets/vendor/sveltia/`: Sveltia CMS built from the [brunoloff/sveltia-cms](https://github.com/brunoloff/sveltia-cms) fork, with `VERSION.txt` naming the fork commit. Generated; don't edit by hand.
+- `admin/*.js`: this site's editor customizations (Photo and expandable-section blocks, previews, visitor statistics), using Sveltia's public API.
+- `cms/`, `scripts/sync-sveltia.sh`: the build step that bundles the fork into `assets/vendor/sveltia/`. Excluded from the published site.
 - `docs/`: original public page content, download hashes, imported routes, and known unavailable source files. Excluded from the published site.
 
 The theme recreates the old WordPress Syntax appearance using a dark header and a narrow serif content column. The editor preview uses the same fonts and content styles. WordPress comments and subscription forms are not part of this static site. Third-party destinations such as arXiv, institutional pages, videos, and the existing Kaleidoscope workshop retain their external links.
@@ -53,6 +55,16 @@ Open http://127.0.0.1:4000/. Local dependencies and generated output are ignored
 
 ## Editor updates
 
-The editor bundle is deliberately fixed rather than loaded from a CDN. `assets/vendor/sveltia-version.txt` identifies its version. To upgrade, obtain a specific official `@sveltia/cms` package, replace its `dist/sveltia-cms.js`, license, and `schema/sveltia-cms.json` in the corresponding repository paths, then validate `admin/config.yml` and check the editor before publishing.
+The editor is self-hosted and loads nothing from a CDN. It is built from the `brunoloff` branch of the [brunoloff/sveltia-cms](https://github.com/brunoloff/sveltia-cms) fork, which is an upstream release plus my own editor features (see `FORK.md` there).
+
+To update it, with the fork checked out next to this repository (`../sveltia-cms`) on the branch to build:
+
+```sh
+scripts/sync-sveltia.sh
+```
+
+It builds the fork, bundles it into `assets/vendor/sveltia/`, and copies the license and config schema (`admin/sveltia-cms.schema.json`). Then validate `admin/config.yml` against the schema, check `/admin/` in a local preview, and commit the result. Needs Node and pnpm.
+
+Website-specific editor code belongs in `admin/*.js`; general editor improvements belong in the fork.
 
 See [migration notes](docs/MIGRATION.md) for source preservation and outstanding broken WordPress links.

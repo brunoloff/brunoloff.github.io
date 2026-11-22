@@ -1,0 +1,15 @@
+{
+  "name": "brunoloff-site-cms",
+  "private": true,
+  "type": "module",
+  "description": "Bundles Sveltia CMS from the brunoloff/sveltia-cms fork into assets/vendor/sveltia, with no third-party CDN at runtime.",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@sveltia/cms": "file:../../sveltia-cms/package"
+  },
+  "devDependencies": {
+    "vite": "8.3.8"
+  }
+}

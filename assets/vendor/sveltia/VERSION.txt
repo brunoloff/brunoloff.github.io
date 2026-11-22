@@ -1,0 +1,5 @@
+Sveltia CMS 0.270.1
+Fork: https://github.com/brunoloff/sveltia-cms
+Branch: brunoloff
+Commit: 5efd72862745bc12ddaea388cfc87781b0d95cf4
+Upstream base: v0.270.1

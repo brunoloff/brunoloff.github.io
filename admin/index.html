@@ -9,9 +9,17 @@
 </head>
 <body>
   <noscript>Enable JavaScript to use the website editor.</noscript>
-  <script src="/assets/vendor/sveltia-cms.js"></script>
-  <script src="/admin/components.js"></script>
-  <script src="/admin/links.js"></script>
-  <script src="/admin/preview.js"></script>
+  <script type="module">
+    // Sveltia CMS built from the brunoloff/sveltia-cms fork (see scripts/sync-sveltia.sh).
+    // Importing it sets window.CMS, h, DOMPurify, etc.; the site's scripts then register their
+    // components and previews before the CMS starts.
+    import CMS from '/assets/vendor/sveltia/sveltia-cms.js';
+    const load = (src) => new Promise((resolve, reject) => {
+      const script = Object.assign(document.createElement('script'), { src, onload: resolve, onerror: reject });
+      document.head.append(script);
+    });
+    for (const src of ['/admin/components.js', '/admin/links.js', '/admin/preview.js']) await load(src);
+    CMS.init();
+  </script>
 </body>
 </html>
