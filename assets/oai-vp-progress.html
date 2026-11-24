@@ -120,7 +120,7 @@
     <div class="updated" id="updated">loading…</div>
   </div>
   <h2 id="title">Machine-checking OpenAI’s <a id="title-link" href="https://github.com/openai/math/tree/main/preprints/VP-and-VNP-are-different-November-23-2026" target="_blank" rel="noopener">claimed Lean proof</a> that VP ≠ VNP</h2>
-  <p class="stmt-note pending">We have not yet reviewed OpenAI’s formal Lean statement.</p>
+  <p class="stmt-note">We confirmed that OpenAI’s formal Lean statement is equivalent to Anthropic’s; we checked the Lean proof of this equivalence ourselves.</p>
 
   <div class="hero">
     <div class="pct" id="pct">–<small>%</small></div>
@@ -199,11 +199,12 @@
     var T = d.totals || {};
     var phase = String(d.phase || 'setup');
     var det = String(d.phase_detail || '');
-    var stale = phase !== 'done' && phase !== 'failed' && now - num(d.updated) > 10 * 60;
+    var stopped = phase === 'stopped';
+    var stale = phase !== 'done' && phase !== 'failed' && !stopped && now - num(d.updated) > 10 * 60;
     var failedN = num(d.failed && d.failed.count);
     // once the kernel replay has started, the big number, bars and mosaic track the replay
     var R = d.replay_progress;
-    var RM = !!(R && num(R.modules)) && (phase === 'replay' || phase === 'nanoda' || phase === 'done' || (phase === 'failed' && /replay|comparator|nanoda/i.test(det)));
+    var RM = !!(R && num(R.modules)) && (phase === 'replay' || phase === 'nanoda' || phase === 'done' || stopped || (phase === 'failed' && /replay|comparator|nanoda/i.test(det)));
     var frac = RM ? num(R.modules_done) / num(R.modules) : num(T.lines) ? num(T.lines_done) / num(T.lines) : 0;
     var pct = Math.min(100, frac * 100);
     $('pct').firstChild.nodeValue = pct >= 99.95 && frac < 1 ? '99.9' : pct.toFixed(pct < 10 ? 2 : 1);
@@ -238,12 +239,15 @@
       var good = d.axioms && d.axioms.ok && !failedN && d.replay === 'passed' && d.nanoda === 'passed';
       kick = 'Finished · machine shut down'; dot.className = 'live ' + (good ? 'ok' : 'bad');
     }
+    if (stopped) {
+      kick = 'Finished · machine shut down'; dot.className = 'live ' + (d.axioms && d.axioms.ok && !failedN && d.replay === 'passed' ? 'ok' : 'bad');
+    }
     $('kicker').textContent = kick;
     $('updated').textContent = d.updated ? 'updated ' + ago(now - d.updated) : '';
 
     // stepper
     var order = ['setup', 'cache', 'build', 'axioms', 'replay', 'nanoda', 'done'];
-    var at = order.indexOf(phase);
+    var at = order.indexOf(stopped ? 'nanoda' : phase);
     var failedAt = phase === 'failed' ? (/comparator|nanoda/i.test(det) ? 'nanoda' : /replay/i.test(det) ? 'replay' : /axiom/i.test(det) ? 'axioms' : /cache/i.test(det) ? 'cache' : 'build') : null;
     Array.prototype.forEach.call($('steps').children, function (li) {
       var p = li.getAttribute('data-p'), i = order.indexOf(p);
@@ -252,7 +256,7 @@
         var fi = order.indexOf(failedAt);
         li.className = i < fi ? 'done' : i === fi ? 'failed' : '';
       } else if (phase === 'done' || i < at) li.className = 'done';
-      else if (i === at) {
+      else if (i === at && !stopped) {
         li.className = 'active';
         if (p === 'build' || (p === 'replay' && RM)) li.style.setProperty('--p', pct.toFixed(1) + '%');
       }
@@ -266,11 +270,16 @@
       v.appendChild(el('strong', null, 'The proof is sound. '));
       v.appendChild(el('span', null, 'Every file compiled, Lean’s kernel independently re-checked all ' + (RM ? nf.format(num(R.modules)) + ' ' : '') +
         'compiled modules, the independent nanoda kernel re-checked the proof, and the main theorem matches the trusted statement and rests only on Lean’s three standard axioms.'));
+    } else if (stopped && ax && ax.ok && !failedN && d.replay === 'passed') {
+      v.hidden = false;
+      v.appendChild(el('strong', null, 'The proof checks out in Lean’s kernel. '));
+      v.appendChild(el('span', null, 'Every file compiled, Lean’s kernel independently re-checked all ' + (RM ? nf.format(num(R.modules)) + ' ' : '') +
+        'compiled modules, and the main theorem rests only on Lean’s three standard axioms. We stopped the second, independent kernel (nanoda) before it finished, so that re-check was not completed.'));
     } else if (ax && !ax.ok) {
       v.hidden = false; v.className = 'verdict bad';
       var extra = Array.isArray(ax.unexpected) && ax.unexpected.length ? ax.unexpected.slice(0, 6).map(String).join(', ') : 'unreadable output';
       v.textContent = 'Axiom check: the main theorems depend on unexpected axioms: ' + extra + '.';
-    } else if (d.nanoda && d.nanoda !== 'passed') {
+    } else if (d.nanoda && d.nanoda !== 'passed' && !stopped) {
       v.hidden = false; v.className = 'verdict bad';
       v.textContent = 'Independent kernel: ' + String(d.nanoda).slice(0, 120) + '.';
     } else if (d.replay && d.replay !== 'passed') {
