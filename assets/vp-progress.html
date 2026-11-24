@@ -142,14 +142,14 @@
 
   <div class="foot" id="foot">
     <span id="foot-mosaic">Each square is 0.1% of the Lean code, grouped by chapter of the paper; it fills in as the files compile.</span>
-    The check runs on a local machine and publishes progress every 5 minutes.
+    The check runs on a Google Cloud machine and publishes progress every minute.
     A finished build only means something together with the later steps: the five main theorems must rely on nothing beyond Lean’s three standard axioms, a kernel replay re-checks every compiled declaration to rule out metaprogramming tricks, and Comparator confirms the theorems match the trusted statements in Challenge.lean and re-checks the proofs in nanoda, an independently written kernel. No machine checks that Statement.lean says what the paper claims.
   </div>
 </section>
 
 <script>
 (function () {
-  var DEFAULT = 'https://raw.githubusercontent.com/brunoloff/vp-lean-progress/main/progress.json';
+  var DEFAULT = 'https://storage.googleapis.com/vp-lean-progress-6e6c3e70/progress.json';
   var q = new URLSearchParams(location.search);
   var URL_ = q.get('data') || DEFAULT;
   var CELLS = 1000;
@@ -198,7 +198,7 @@
     var T = d.totals || {};
     var phase = String(d.phase || 'setup');
     var det = String(d.phase_detail || '');
-    var stale = phase !== 'done' && phase !== 'failed' && now - num(d.updated) > 20 * 60;
+    var stale = phase !== 'done' && phase !== 'failed' && now - num(d.updated) > 10 * 60;
     var failedN = num(d.failed && d.failed.count);
     // once the kernel replay has started, the big number, bars and mosaic track the replay
     var R = d.replay_progress;
@@ -366,7 +366,7 @@
 
   var last = null;
   function load() {
-    fetch(URL_ + (URL_.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000), { cache: 'no-store' })
+    fetch(URL_ + (URL_.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 15000), { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (d) { last = d; render(d); })
       .catch(function () { if (last) render(last); else waiting('no data yet'); });
@@ -375,7 +375,7 @@
   $('mosaic').addEventListener('mouseleave', function () { focus(null); hl(null); });
   function hl(id) { Array.prototype.forEach.call($('chapters').children, function (li) { li.style.background = li.getAttribute('data-ch') === id ? '#f6f5f2' : ''; }); }
   load();
-  setInterval(load, 5 * 60 * 1000);
+  setInterval(load, 60 * 1000);
   setInterval(function () { if (last) render(last); }, 60 * 1000); // keep "x min ago" fresh
   window.addEventListener('resize', function () { layoutMosaic(); resize(); });
 })();
